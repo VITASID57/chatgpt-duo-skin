@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-label="ChatGPT Duo Skin dual avatar theme illustration">
+<defs>
+ <linearGradient id="stage" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#090F25"/><stop offset=".6" stop-color="#192D52"/><stop offset="1" stop-color="#241D49"/></linearGradient>
+ <linearGradient id="left" x1="0" x2="1"><stop stop-color="#203350"/><stop offset=".48" stop-color="#597794"/><stop offset="1" stop-color="#EAF4FA"/></linearGradient>
+ <linearGradient id="right" x1="0" x2="1"><stop stop-color="#E65398"/><stop offset=".6" stop-color="#F58CBD"/><stop offset="1" stop-color="#FEEDF5"/></linearGradient>
+ <linearGradient id="plate" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#152B4D"/><stop offset="1" stop-color="#44374F"/></linearGradient>
+ <filter id="shadow"><feDropShadow dx="0" dy="7" stdDeviation="10" flood-color="#000" flood-opacity=".2"/></filter>
+</defs>
+<rect width="1200" height="700" fill="url(#stage)"/>
+<g opacity=".22" fill="none" stroke="#BAC7FF"><circle cx="1100" cy="80" r="180"/><circle cx="1100" cy="80" r="135"/><circle cx="1100" cy="80" r="90"/></g>
+<rect x="0" y="0" width="246" height="700" fill="#091022" opacity=".94"/>
+<text x="30" y="70" font-family="Arial,Noto Sans CJK SC,sans-serif" font-size="28" font-weight="700" fill="#E9EFFA">ChatGPT</text>
+<g font-family="Arial,Noto Sans CJK SC,sans-serif" fill="#ADBED8" font-size="18"><text x="30" y="135">＋ 新聊天</text><text x="30" y="206">最近的对话</text><text x="48" y="257">小小主题实验</text><text x="48" y="302">我们的创作笔记</text></g>
+<text x="292" y="70" font-family="Arial,sans-serif" fill="#D9E5F9" font-size="19" font-weight="700">ChatGPT Duo Skin</text>
+<text x="292" y="104" font-family="Arial,sans-serif" fill="#93A9D1" font-size="14">Custom avatars  ·  Gradient bubbles  ·  Your own theme</text>
+<g filter="url(#shadow)">
+<rect x="310" y="143" width="624" height="150" rx="24" fill="url(#plate)" stroke="#6F8FB3" stroke-opacity=".65"/>
+<rect x="327" y="162" width="108" height="108" rx="18" fill="#37568F" stroke="#D0E5FF" stroke-width="2"/>
+<text x="354" y="226" font-family="Arial,sans-serif" font-weight="800" font-size="47" fill="#FFF">AI</text>
+<text x="461" y="187" font-family="Arial,Noto Sans CJK SC,sans-serif" font-size="25" font-weight="700" fill="#F1F6FF">AI 助手 · Assistant ♡</text>
+<text x="461" y="219" font-family="Arial,sans-serif" font-size="16" fill="#CEDBF8">MESSAGE ARCHIVE · conversation snapshot</text>
+<rect x="461" y="244" width="220" height="27" rx="12" fill="#26456E"/>
+<text x="480" y="263" font-family="Arial,Noto Sans CJK SC,sans-serif" font-size="13" fill="#DCE9FF">✨ 2026 / 10 / 10 · 主题时间</text>
+<rect x="690" y="244" width="224" height="27" rx="12" fill="#443953"/>
+<text x="705" y="263" font-family="Arial,Noto Sans CJK SC,sans-serif" font-size="13" fill="#F1DCEF">💌 本轮状态 · 记录这一刻</text>
+</g>
+<rect x="337" y="320" width="540" height="51" rx="21" fill="url(#left)" filter="url(#shadow)"/>
+<text x="359" y="352" font-family="Arial,Noto Sans CJK SC,sans-serif" font-size="18" fill="#F6FBFF">这是一套自由定制的聊天主题。</text>
+<rect x="337" y="382" width="575" height="51" rx="21" fill="url(#left)"/>
+<text x="359" y="414" font-family="Arial,Noto Sans CJK SC,sans-serif" font-size="18" fill="#F6FBFF">每颗气泡、每张头像，都能改成自己喜欢的样子。</text>
+<rect x="606" y="461" width="476" height="50" rx="22" fill="url(#right)" filter="url(#shadow)"/>
+<text x="624" y="493" font-family="Arial,Noto Sans CJK SC,sans-serif" font-size="18" fill="#613751">我想做一套芭比粉与深海蓝！</text>
+<rect x="713" y="524" width="369" height="50" rx="22" fill="url(#right)"/>
+<text x="731" y="556" font-family="Arial,Noto Sans CJK SC,sans-serif" font-size="18" fill="#613751">还要一只可以拖动的小土星。♡</text>
+<circle cx="1110" cy="500" r="25" fill="#D668A9" stroke="#FFD9F0" stroke-width="3"/><text x="1091" y="507" font-family="Arial,sans-serif" font-size="15" fill="#FFF">ME</text>
+<rect x="315" y="618" width="728" height="51" rx="25" fill="#E8F1FF" stroke="#AFC8EC"/>
+<text x="347" y="651" font-family="Arial,Noto Sans CJK SC,sans-serif" font-size="16" fill="#526B91">向 ChatGPT 发送消息…</text>
+<g transform="translate(1114 630)"><ellipse cx="0" cy="0" rx="39" ry="12" transform="rotate(-22)" stroke="#CBB7FF" stroke-width="4" fill="none"/><circle r="22" fill="#9271D8" stroke="#EEE1FF" stroke-width="2"/><path d="M-14,-3 Q0,-13 14,-4 M-15,10 Q0,17 15,7" fill="none" stroke="#E7D4FF" stroke-width="3"/></g>
+<text x="24" y="673" font-family="Arial,sans-serif" fill="#7793C3" font-size="11" opacity=".7">ILLUSTRATION · UNOFFICIAL · NONCOMMERCIAL</text>
+</svg>
