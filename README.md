@@ -5,7 +5,7 @@
 > **公开源码 · 免费非商用 · 非官方社区项目**  
 > 许可证：**PolyForm Noncommercial 1.0.0**。可以为非商业目的使用、修改和按许可证再分发，**不得未经许可商业使用、付费打包、收费转售或作为商业服务出售**。它是 source-available，不属于 OSI 定义的开源许可证。
 
-![公共版桌面效果](examples/public-theme-1360.png)
+![公共版桌面效果](examples/preview.svg)
 
 ## ✨ 有什么功能
 
