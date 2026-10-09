@@ -1,0 +1,12 @@
+.DS_Store
+Thumbs.db
+__pycache__/
+*.pyc
+*.log
+*.env
+.env.*
+node_modules/
+/private/
+/_personal/
+*.key
+*.pem
