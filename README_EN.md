@@ -4,7 +4,7 @@
 
 > Source-available, free for permitted noncommercial uses. **PolyForm Noncommercial 1.0.0**. Commercial use, paid redistribution, and paid service bundling are **not permitted** without separate written permission. Not OSI-open-source.
 
-![Public theme preview](examples/public-theme-1360.png)
+![Public theme preview](examples/preview.svg)
 
 ## Compatibility
 
