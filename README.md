@@ -2,7 +2,7 @@
 
 **无需 API，把 ChatGPT 网页装成有双人头像、左右气泡、镜像状态卡和可编辑主题的私人聊天室。**
 
-[English](README_EN.md) · [安装说明](docs/INSTALL_CN.md) · [AI 亲笔状态（选装玩法）](docs/AUTHORED_STATE_CN.md) · [平台兼容进度](docs/PLATFORM_STATUS.md)
+[English](README_EN.md) · [桌面安装](docs/INSTALL_CN.md) · [📱 安卓 Firefox 安装](docs/INSTALL_ANDROID_CN.md) · [AI 亲笔状态（选装玩法）](docs/AUTHORED_STATE_CN.md) · [平台兼容进度](docs/PLATFORM_STATUS.md)
 
 > **公开源码 / Source-available · 免费非商用 · 非官方**
 > 软件按 [PolyForm Noncommercial 1.0.0](LICENSE) 授权，允许在许可范围内免费使用、修改、非商业再分发；不允许未经授权的商业售卖、收费打包或作为收费产品的一部分。因限制商用，**不是 OSI 定义的开源许可证**。
@@ -21,15 +21,19 @@
 | 🪐 **小土星** | 拖拽贴边、收起设置面板，提供实时北京时间；历史状态卡时间不会跟着跑 |
 | ✍️ **AI 亲笔状态（可选）** | 让你自己的 GPT 负责选双方头像、两张卡片的文案与配色；**默认不启用** |
 
-**体验边界**：没有 AI 亲笔协议时，状态卡由浏览器根据可见消息做关键词推断，不代表模型真实情绪。双方图片、壁纸及设置保存在用户自己的浏览器扩展存储，不会随脚本分享出去。
+**体验边界**：桌面与手机均如此：没有 AI 亲笔协议时，状态卡由浏览器根据可见消息做关键词推断，不代表模型真实情绪。双方图片、壁纸及设置保存在用户自己的浏览器扩展存储，不会随脚本分享出去。
 
-## 🖥 目前支持环境
+## 🖥️ 桌面 + 📱 安卓：同一个仓库，两条独立发行线
 
-**Windows 10/11 · Google Chrome 桌面版 · Tampermonkey · chatgpt.com**。新版仍为 Beta：已经在模拟新版/旧版消息结构中测试，实际页面受 ChatGPT 网页更新影响可能需要适配。
+| 平台 | 发行版 | 入口 |
+| --- | --- | --- |
+| Windows Chrome + Tampermonkey | **Desktop Beta v0.2.0** | [桌面脚本](dist/chatgpt-duo-skin.user.js) · [安装](docs/INSTALL_CN.md) |
+| Android Firefox + Tampermonkey | **Mobile Beta v0.3.0** | [手机脚本](dist/chatgpt-duo-skin-android.user.js) · [📱 安装](docs/INSTALL_ANDROID_CN.md) |
+| ChatGPT 官方 Android / iOS App | **不支持** | 原生 App 不能运行浏览器用户脚本 |
 
-**安卓 Firefox 网页版正在适配，尚未纳入本次版本。** ChatGPT 官方 Android/iOS App 无法直接运行这套用户脚本。手机端完成后会在**同一个仓库**增加手机适配与独立安装说明，不需要另开项目。
+**手机版**源自实际 Android Firefox 测试中的移动适配经验：支持窄屏双人卡、状态栏、触控主题面板、连续 HSV 调色盘、软键盘避让与固定视口壁纸。公共版已通过 320 / 393 / 430px 模拟检查，仍属 Beta，需用户在各自 Firefox 版本上验证。**桌面版没有被手机补丁覆盖。**
 
-## 🚀 3 分钟安装
+## 🚀 安装桌面版（3 分钟）
 
 1. 安装 [Tampermonkey（篡改猴）](https://www.tampermonkey.net/)，在 Chrome 扩展详情页开启 **「允许用户脚本 / Allow User Scripts」**。
 2. 复制 [`dist/chatgpt-duo-skin.user.js`](dist/chatgpt-duo-skin.user.js) 全部代码到篡改猴中新建用户脚本，保存并启用。
@@ -37,7 +41,12 @@
 
 [详细说明、备份与故障排查](docs/INSTALL_CN.md)
 
-**从 v0.1 升级？** 先备份旧脚本，然后直接覆盖公共版 v0.1 的同一条 Tampermonkey 脚本。v0.2 继续使用 `cds.public.v1.*` 本地存储前缀，以便沿用已有的用户配置、头像和壁纸。**不要和私人版或其他换肤脚本同时开启**，也不要把自己的头像库备份公开上传。
+### 📱 安卓 Firefox（独立脚本）
+在 Firefox 安卓版安装 Tampermonkey 后，打开 [`dist/chatgpt-duo-skin-android.user.js`](dist/chatgpt-duo-skin-android.user.js)，将全部代码复制到篡改猴新脚本中保存，刷新 `chatgpt.com`。如果直接安装链接被浏览器当文本打开，请使用“复制源码 → 新建脚本”方式。
+
+手机专用发行版保留连续调色盘、迷你土星、可折叠设置面板、双人头像与实时渐变。**默认用两张中性占位头像、通用昵称，纪念日起点留空，AI 亲笔状态关闭**。设置只留在本机。详见 [安卓安装与隐私注意事项](docs/INSTALL_ANDROID_CN.md)。
+
+**桌面版从 v0.1 升级？** 先备份旧脚本，然后直接覆盖公共版 v0.1 的同一条 Tampermonkey 脚本。v0.2 继续使用 `cds.public.v1.*` 本地存储前缀，以便沿用已有的用户配置、头像和壁纸。**不要和私人版或其他换肤脚本同时开启**，也不要把自己的头像库备份公开上传。
 
 ## ✍️ 玩法扩展：让你的 GPT 自己导演
 

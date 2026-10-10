@@ -2,7 +2,7 @@
 
 An **unofficial, source-available, noncommercial** browser userscript that adds two customizable avatars, mirrored status cards, gradient chat bubbles, wallpaper, and a draggable theme editor to **ChatGPT desktop web**.
 
-[简体中文](README.md) · [Install (Chinese)](docs/INSTALL_CN.md) · [Optional AI-authored states](docs/AUTHORED_STATE_EN.md) · [Platform status](docs/PLATFORM_STATUS.md)
+[简体中文](README.md) · [Desktop install](docs/INSTALL_CN.md) · [📱 Android install](docs/INSTALL_ANDROID_EN.md) · [Optional AI-authored states](docs/AUTHORED_STATE_EN.md) · [Platform status](docs/PLATFORM_STATUS.md)
 
 ![Illustration](examples/preview-v0.2.svg)
 
@@ -15,11 +15,13 @@ An **unofficial, source-available, noncommercial** browser userscript that adds 
 - **Local-only operation:** no ChatGPT API or third-party image hosting is needed.
 - **Optional AI-authored state:** opt in to a machine-readable message appendix to let *your own assistant* design both cards' expressions, captions, and gradient colors.
 
-### Installation
+### Desktop installation
 
 Tested on **Windows Chrome + Tampermonkey**. Enable *Allow User Scripts* in Chrome's extension details. Open [`dist/chatgpt-duo-skin.user.js`](dist/chatgpt-duo-skin.user.js), copy it into a Tampermonkey script, save, then refresh `chatgpt.com`. Open the small planet at the bottom-right to customize everything.
 
-**Android Firefox support is in progress and is not included in this desktop release.** Native ChatGPT Android/iOS apps cannot run the userscript.
+**Android Firefox + Tampermonkey Mobile Beta v0.3.0 is now included**, as a **separate mobile script** that does not modify the desktop v0.2.0 entry. The public mobile build has been tested in responsive browser simulations; please validate on your own device.
+
+Mobile: [install guide](docs/INSTALL_ANDROID_EN.md) · [mobile userscript](dist/chatgpt-duo-skin-android.user.js). It includes touch-friendly half-height/full-height theme studio, custom HSV color picker, mobile card spacing and viewport-anchored wallpaper. **No personal avatars, names or anniversary are bundled; the AI-authored state protocol is off by default.** Native ChatGPT Android/iOS apps cannot run a browser userscript.
 
 ### Optional AI states
 

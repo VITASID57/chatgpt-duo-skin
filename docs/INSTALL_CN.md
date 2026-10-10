@@ -1,6 +1,6 @@
 # 安装 · Desktop Beta v0.2.0
 
-**支持：Windows 10/11、Chrome 桌面版、Tampermonkey、chatgpt.com。** 安卓 Firefox 版本另行开发，当前请勿把桌面测试当作安卓支持承诺。
+**支持：Windows 10/11、Chrome 桌面版、Tampermonkey、chatgpt.com。** 本页只教桌面版。安卓 Firefox 请看独立的 [手机安装指南](INSTALL_ANDROID_CN.md)，不要把两套脚本同时装在同一页面。
 
 ## 首次安装
 
