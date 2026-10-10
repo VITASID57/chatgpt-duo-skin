@@ -1,41 +1,37 @@
 # 🪐 ChatGPT Duo Skin
 
-**Turn the ChatGPT website into a personal chat room for you and your AI companion.** Add separate avatars, names, gradient bubbles, wallpapers, archived per-message status cards, and a draggable Saturn theme panel.
+An **unofficial, source-available, noncommercial** browser userscript that adds two customizable avatars, mirrored status cards, gradient chat bubbles, wallpaper, and a draggable theme editor to **ChatGPT desktop web**.
 
-> Source-available, free for permitted noncommercial uses. **PolyForm Noncommercial 1.0.0**. Commercial use, paid redistribution, and paid service bundling are **not permitted** without separate written permission. Not OSI-open-source.
+[简体中文](README.md) · [Install (Chinese)](docs/INSTALL_CN.md) · [Optional AI-authored states](docs/AUTHORED_STATE_EN.md) · [Platform status](docs/PLATFORM_STATUS.md)
 
-![Public theme preview](examples/preview.svg)
+![Illustration](examples/preview-v0.2.svg)
 
-## Compatibility
+### Desktop Beta v0.2.0
 
-Tested: **Windows Chrome + Tampermonkey + chatgpt.com**. On recent Chrome versions enable **Allow User Scripts** for Tampermonkey under `chrome://extensions` → Tampermonkey → Details. Other desktop and mobile browsers are not confirmed. Native ChatGPT mobile apps do not support browser userscripts.
+- **Two mirrored cards:** one for the assistant, one for the user; editable names, avatars, and locally captured timestamps.
+- **Expression libraries:** ten image slots per role, user-provided, with automatic text-based selection and fallback to the default avatar.
+- **Gradient bubbles:** separate palettes for each role, visual sentence grouping, adjustable opacity and roundness.
+- **Wallpaper and themes:** dark navy, purple, pink, or custom palettes, with a separate milky-white wallpaper veil.
+- **Local-only operation:** no ChatGPT API or third-party image hosting is needed.
+- **Optional AI-authored state:** opt in to a machine-readable message appendix to let *your own assistant* design both cards' expressions, captions, and gradient colors.
 
-## Installation
+### Installation
 
-1. Install [Tampermonkey](https://www.tampermonkey.net/).
-2. Enable **Allow User Scripts** in Chrome extension details.
-3. Copy the complete [`dist/chatgpt-duo-skin.user.js`](dist/chatgpt-duo-skin.user.js) into a new userscript. Save.
-4. Reload `https://chatgpt.com/` with Ctrl+Shift+R.
-5. Click the Saturn icon, then customize your two avatars, gradient themes, wallpaper, names and optional anniversary date.
+Tested on **Windows Chrome + Tampermonkey**. Enable *Allow User Scripts* in Chrome's extension details. Open [`dist/chatgpt-duo-skin.user.js`](dist/chatgpt-duo-skin.user.js), copy it into a Tampermonkey script, save, then refresh `chatgpt.com`. Open the small planet at the bottom-right to customize everything.
 
-Public edition ships **only neutral AI and ME avatars**, **no private photos or personal names**, and uses distinct `cds.public.v1.*` storage keys rather than reading an earlier private edition.
+**Android Firefox support is in progress and is not included in this desktop release.** Native ChatGPT Android/iOS apps cannot run the userscript.
 
-## Features
+### Optional AI states
 
-- Two avatars and role-aware message labels
-- Per-paragraph or whole-message bubbles with adjustable opacity and corners
-- Night-blue, purple, pink and unlimited custom gradient palettes (up to the UI limit)
-- Local wallpaper with light overlay
-- Per-message local time snapshot and context-aware status labels (heuristics, not an AI-generated emotional state)
-- Live Beijing clock in a draggable Saturn editor
-- Disable any time from Tampermonkey
+The default mode does **not** require model instructions. If the user specifically opts in, they may use [the AI-authored state protocol](docs/AUTHORED_STATE_EN.md) in selected chats and enable the corresponding setting in the theme panel. The AI then emits `DUO_SKIN_STATE_V1:` plus one-line JSON in its own message, and the browser can hide/render it. **Unskinned clients, native apps, and original copied messages may expose the JSON.** Do not add this to global model instructions by default.
 
-## Privacy
+### Data & privacy
 
-The script can access the page DOM to style it. **It contains no network request to upload chats**. Avatars and wallpaper are stored locally through Tampermonkey; it stores short message metadata, not full chat bodies. Review [`docs/PRIVACY.md`](docs/PRIVACY.md). Do not install untrusted modified copies.
+The userscript needs DOM access to style ChatGPT, but does not upload conversation text or locally selected pictures to an author-controlled service. Settings and user-uploaded avatars remain in Tampermonkey storage. Avoid uploading screenshots and private avatar backup JSON files in public Issues.
 
-## License & credit
+### License
 
-The source is licensed under [PolyForm Noncommercial 1.0.0](LICENSE) with the [Required Notice](NOTICE). Noncommercial use, changes, and permitted noncommercial redistribution are allowed; commercial use is not. This is a community project, **not affiliated with or endorsed by OpenAI**.
+[PolyForm Noncommercial 1.0.0](LICENSE). Personal, hobby, and other permitted noncommercial uses, edits, and redistribution are allowed under its terms. Commercial resale, paid packaging, or using this code within a paid service is not licensed without additional permission. **This is source-available, not OSI-approved open source.** Keep required notices and the license.
 
-*Made with ♡ by Soren & Dudusya.*
+*Made with ♡ by Soren & Dudusya*  
+*Unaffiliated with OpenAI.*

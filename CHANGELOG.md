@@ -1,11 +1,15 @@
 # Changelog
 
-## 0.1.0-beta · 2026-10-10
+## v0.2.0 · Desktop Beta (2026-10-10)
 
-- First public, scrubbed source-available noncommercial release.
-- Neutral bundled AI / ME avatar illustrations; removed embedded private portraits.
-- Independent `cds.public.v1.*` settings namespace with no private-version migration.
-- Configurable optional anniversary date, blank by default.
-- Themes: night-blue, purple, pink, and custom gradient palettes.
-- Role-aware avatars, message bubbles, draggable Saturn editor, local wallpaper.
-- First-install and privacy documentation in Chinese and English.
+- Upgrade desktop user script to mirrored **two-person status cards** with larger avatars and independent messages.
+- Add an **expression avatar library** (10 uploadable slots for each role) with locally inferred role-appropriate selection.
+- Add **optional AI-authored states**, using the generic `DUO_SKIN_STATE_V1` protocol and optional `userCard` for both sides. Disabled by default; no API calls.
+- Retain gradient bubbles, theme customizer, wallpaper veil, and draggable planet panel.
+- Remove owner-specific images, personal nicknames, dates and local storage identifiers; public `cds.public.v1.*` storage namespace stays compatible with v0.1.
+- Add independent **Android Firefox support-in-progress** note. Desktop remains the only first-class beta target.
+- Add privacy, instructions, optional-state tutorial and release checks.
+
+## v0.1.0 · First source-available desktop beta
+
+- Initial public noncommercial script with neutral sample avatars and desktop customization.

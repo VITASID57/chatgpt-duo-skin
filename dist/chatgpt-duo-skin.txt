@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         ChatGPT Duo Skin｜双人聊天皮肤（非商用）
 // @namespace    https://github.com/VITASID57/chatgpt-duo-skin
-// @version      0.1.0
-// @description  Local-only avatars, gradient chat bubbles, wallpapers, per-message status cards and theme editor.
-// @author       Duo Skin & You
+// @version      0.2.0
+// @description  Desktop beta: avatars, mirrored cards, editable gradients, expressive face library, optional AI-written states.
+// @author       Duo Skin contributors
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
 // @run-at       document-idle
@@ -25,13 +25,13 @@
     assistant: 'data:image/webp;base64,UklGRqYFAABXRUJQVlA4IJoFAACwHACdASqAAIAAPm0ylUckIyIhJJccWIANiWUFhzm/lgur9aTC7bB+jHbR7i7envQA6Ye/Y+rxywR+L+k/I7zVfxVvo7kLiA4DPwU/lf+m83HnWf2nkv/Kf7//4vcP/l39j6yX7VeyL+vJagBaMnohvLXtwKsJCznXFrG81yd7i+Edj6yuWsvaZ0iI2EmpWxV8cBOi/f/9xJGTytCDrboopIJ5o9TKi6FtxtffEEvNzPN5ik6uSjGQh18tKp2KSzsAa0z5hrYjWGkdibPYcTvVyyka4vc4xdsk8eV2c65EPV7n7NPUcq92pe+z+9gAAP7sBqDeJ2+4Jrl59Tn4f9qbaLFIP+vIk7dQ0SKb+bzhfgeOMKfmHVtaUyr73j3RqVErrDX5Gfj2Z6IUDOdQAyHw/Z9V0e1dzUawB/+MX+TrFGDZH6FNOJYSF2s2DfUDTg7ftMknHJhtH0XXOfrN0TGBd7zhrFBxn6cOeXkfc/+ufX7qPoNGWvwIUaaRd+E+4fZTWuJn/y+Qstn+41aR+1CNoQU232+s/DtEseEaX5SGtDiwz/bjZqHNth456LkB99zFAZ/Hf77aeHirIoSAeaxNmyO6lsunDIph5fAZDE35zNJDQH7v5iTEoF2yPMtEZ7YHDoePdsvAuAEAtGCyBBH79zdX9u+p+cR29VrQ35IKa2eN1H3NrvoXd1VQMtevFPyJJv9VLYuYtVTvAhWeJu3gf6e/nBz7HpgqdHnSvOfGg3W0mpdWirFLsZLuLjPlxZzbMS4BBuJL1b0J6bXU+1+XXNYemYtIxxXjrN86ocpYu+I9LeMoYjo6Xn1EBQgHxHZNduXs8lykG8p6iD9M/o9XORv0N2UppZuPt/faObfpw4U6rpvadbrcYxDimcak740u/KTW7KPnY3ZhdkTntK/dDZS3trp7YFckpcdFa5xVEo35/0UMdwenMh637lhyYmrP4F3QX+B8jSYtvbqzkjNKhZvxrIJ+D3/3p/3WFf+WQMFNPkicLNbBGaJyYQxrGxna8y1wEuSMtM7n4sGnyaHrDoIErGtX6fKbAVhS5rR0sbxkRCoVy37NzL9ts/3ruiqDBSylA//N10eesbBWSdn2PeggXyugdDUOKCgQZ8mRz6YE7/9I2XOX0mM8p9lS212e04CsgHMOaav2zfaan7eHw4Fo85WlZULnITHG0Oy8QUuxuSD+Aq02bd+FPUhnLc0Ry7ZIM3Df+9/YH3PX4It6xk2V/jhXAz8Xbsn741CtfgoidU7al9WBdPEYPPNkMDe1T3LVUdr1/IPSkrsLlSybcYlJVhMko1fcHSP/Vt3vZSxt0jP/Y4i62/GOmtk2tvmJhtX1x6wthEbOut3ek0HEItCC6gKQshoeb5k8cMItzQS5d4KVPQo7iGlex70+mjt9Qw8SFkI3raFj9pXKBgyICbeQbCVFB9ucDSBIBnMZzywMpRBDHvDVmfUkUJePVTyTICJA/aD/AyJtr0JJVvlUSFhhwvZrBB8cNkuubuE9wOc1Lo+uHfrv9wFZAjeQc/4Jvovg9XbYCD5MMjkt2WBLxrezGz3r3po3ygo3n1pGGV/RhaTbQUW63hcPv6c9QF087kwYfBnY2OCJIg7G7wBdbjsBz7DdmEZSkNKUHEbsbwukMDL0yfBJzlrSEqRY0WiWiQh0Ik16MP+oIaWcPbhNMKHyCEQEU4ICue1I3tOMgS/typRNGXt06p1sqz44xCuLngxzc60nazauBIkWUfkMkZw94Ev4WnL0DLoAS3AkjiAhyVVK0pxaWS6Qv/CMbF0xbnJ4rnPHzi2tyovNxY9M+fqQTXivswn8++48kzInOO5WqhDAjjtkI5EWoD3ueW/1vFKN/edItex5+OqAlAGQfyabzL1n2gSygNA92+JdpRHj0hlKznmAAAA=',
     user: 'data:image/webp;base64,UklGRpgFAABXRUJQVlA4IIwFAADQHACdASqAAIAAPm0wlUakIyIhKZXriIANiUCwxDf9YUcBaLDhqJMka1X7PSjtx/MB+tnqy+hv0AP6f/jutV9BPy3vZj/cX0rsxQzWvICeDBdg3wNJxjm89D/c/uHno+r/YP6T/o1jDszTf2/WP5EGfA+8gjLPilMBo06YZbPZ9j6tszvsPBs1jzIC/mxLiTAUijI6ZUCJgHpKz88o6xpPATs3LuH3Fdll5OxXyiceM3hQGcXl/gVtqew0lsGO62WqEWZZVGpq/uNinRB4JJXt4uV5Fsw3mD8TUPtd7RGwZ8lwOy5rR3Da2H17Rp+EAAD+bqm8ArVdbaryj+Ufs//KYzF6r//D4/tR/ajmYkuDWLN+f+Gyb6jqZ37MwxKvW/T3jAgXCzYjzDhZXfP4t8EWhFLoiRitfVf3334qcUKFJa3/fPOC5liJSaiHLeBXWfTjcqXvJPQTSC3EzxrLp3rfvAbEI6LOI8+0LafT2TOrV9V+FFWteak4fXzWzxhRK1crMRiJ7lIYICk2BTLJjb0SnQucpI7sJtm2jqv5Z6HcYqAPjodV4igLdCQxYle1/KsdguOxu4ZxT+Jg2Qt9fLpe3zDVLUp2PDBP1KUGLnLJ13xeCo0cceos4l4tySiLhnpOqzuSwayhk6e0i1p5dn0JNxTXKgslk1s1yFSXp3FC209y7vQ9yon8Iiuq8eiotzpun212dmxBBGp2VqwAa2rV6Lb6pN3284D17T9ddPY7wj5tX2yPt76whhunGbC3TeYc8GmpJiS5JSGLTySfDWV8/9sH2H8FQOmBUSkR6cApUCkrgBCDHsgVDk/G+S2ZcDVSCSnhyB9z1NlOpXCq9LM3tE5REVOITDAhTsNBFANh8TkDCz5nlx//MCkp6/jZ3vsHYyK8VVbbp9wsJWxMCpIw9TAokkFmO8cpj5kkE+p1vXzgqgF/dUKfs2kHaF/5DUhovQE8k20awxlcnG/dR3UNf/YoGRmFLKjU9avzCFl0wu28WLtw9f2jmOThORAfVznydqMwPLgfAqnZ7lceYaa2vaO28OVpGWVbCZQ3HyDthiK+ysN8dpAOuuSaV/uVMaNEw/f9who9Zf6pCU/EdbBL78ZM3q3fSNzVzDJrz6Ujmf+2y1kkLg/4JB1sKB8LiNqEeTZhUk1tFI5xj8/7d/64KpS6WUUsO4YXMBlFVndcWpzM6Nr0sV6Af291/qvjCIt5cq9NexCKVNsWiy9RHUwQH5os45lu6StrYayiKBIUtC0HifS64LT7MxKc5iP0xmnXIdUceY1CTc+jEFN+9Q3UQtLJOjeQ8CCd4rIWRva/1Ezybkw6+FlPiJ2fK5h2stqygnfQ/zEaQcm6K8ZVR/OGxCC5H3HtbIwhjfDJZ9+Mmb1bwCOpkt2Gc6L8OLW6fD8j9IuVHw8LHZL2WPw+O+L+OJhL89lKjGL30v20MgRsLxZadxSvia1d3rnT+6g3PKff1MnTUtOqbmpvV7sZZLuLQE/5gVgNrg5rUD2B6iup55p2yk+IAzrkue9IpKTibzy2yULKZBAz8CKA6Bao+/0tCcEtwGWC+cu9v/27r+fMOa6CA+8iWF2MtLH9dLa0PvV5eqZlmnosFQEa6V/yYDyctaJ84tWWx4aZZdfvetkj++SESX9YC5ddkE4EJs8Pdm8rIW74tzWS1fth+aP6VOxhOR/fpy7xut4sP3KpWcBiQ5aOqRIg8uUbIwjIoP5QEKbOLL+X9615bxxujDeAecQGujXQoNFb4jJL7JsgbMHlW2KFkprmWIBk0rdB2AKq2wUV1pavXR20C14rqOhWyFrD5DUqSEYMl2RDi2TQS8BOgUC5Ytkv82TKc3a0ey4nvVh782Yvjj+Mr5K8kTxoklnSb6N3zTsJnWXpQAAA'
   };
-  const STORAGE = 'cds.public.v1.config';  // Public edition: never reads private edition settings.
+  const STORAGE = 'cds.public.v1.config';  // Isolated from any private skin; upgrades existing public v0.1 settings.
   const SCHEMA = 'chatgpt-duo-skin/v1';
   const BASE = {
     schema: SCHEMA, preset: 'night', glass: 0.88, radius: 19,
     bubbleMode: 'paragraph', avatarMode: 'overlay', showAvatars: true,
     showWallpaper: true, enabled: true, wallpaperVeil: 0.76,
-    gradientBubbles: true, showPlaque: true, userSentences: true, userSplitMode: 'smart',
+    gradientBubbles: true, showPlaque: true, userSentences: true, userSplitMode: 'smart', authoredState: false,
     assistantName: 'AI 助手 · Assistant', userName: '我 · You', anniversaryDate: ''
   };
   const BUILTIN_COLORS = {
@@ -136,11 +136,14 @@
       gradientBubbles: typeof v.gradientBubbles==='boolean'?v.gradientBubbles:true,
       showPlaque: typeof v.showPlaque==='boolean'?v.showPlaque:true,
       userSentences: ['smart','newline','off'].includes(v.userSplitMode) ? v.userSplitMode!=='off' : (typeof v.userSentences==='boolean'?v.userSentences:true),
-       userSplitMode: 'newline'
+       userSplitMode: 'smart',
+       authoredState: typeof v.authoredState==='boolean'?v.authoredState:false
     };
   }
   let cfg;
   try { cfg=normalize(JSON.parse(GMget(STORAGE,'{}'))); } catch(_) {cfg={...BASE};}
+  // v5.9 persisted newline-only behavior; migrate that previous setting once.
+  try {const old=JSON.parse(GMget(STORAGE,'{}'));if(old.userSplitMode!==cfg.userSplitMode)GMset(STORAGE,JSON.stringify(cfg));} catch(_) {}
   let wallpaper=GMget('cds.public.v1.wallpaper','');
   if(!safeImage(wallpaper)) wallpaper='';
   const avatars = {
@@ -149,12 +152,83 @@
   };
   for(const r of ['assistant','user']) if(!safeImage(avatars[r])) avatars[r]=DEFAULT_AVATARS[r];
 
+  // v5.11 expressive avatar cabinet. Stored entirely in Tampermonkey's local
+  // extension storage. Image slots are separate from legacy base avatars so
+  // all old image settings survive upgrades and library deletion.
+  const FACE_PREFIX='cds.public.v1.face.';
+  const FACE_SLOT_ORDER=['default','joy','play','work','anger','surprise','shy','affection','soothe','sleepy'];
+  const FACE_LABELS={
+    assistant:{default:'默认',joy:'开心',play:'调皮',work:'认真',anger:'不悦',surprise:'惊讶',shy:'害羞',affection:'暖心',soothe:'安抚',sleepy:'困倦'},
+    user:{default:'默认',joy:'开心',play:'眨眼',work:'认真',anger:'生气',surprise:'惊讶',shy:'害羞',affection:'心动',soothe:'委屈',sleepy:'困困'}
+  };
+  let faceAuto=GMget(FACE_PREFIX+'auto',true)!==false;
+  let faceLabels={assistant:{...FACE_LABELS.assistant},user:{...FACE_LABELS.user}};
+  try {const saved=JSON.parse(GMget(FACE_PREFIX+'labels','{}'));
+    for(const role of ['assistant','user']) for(const slot of FACE_SLOT_ORDER){
+      const v=saved?.[role]?.[slot];
+      if(typeof v==='string'&&v.trim()) faceLabels[role][slot]=v.trim().slice(0,16);
+    }
+  } catch(_){}
+  let expressionImages={assistant:{},user:{}};
+  for(const role of ['assistant','user']) for(const slot of FACE_SLOT_ORDER){
+    const v=GMget(FACE_PREFIX+'image.'+role+'.'+slot,'');
+    if(safeImage(v))expressionImages[role][slot]=v;
+  }
+  let faceRole='assistant',faceSlot='default';
+  const FACE_HISTORY=FACE_PREFIX+'message.selection';
+  let faceHistory={};
+  try{const stored=JSON.parse(GMget(FACE_HISTORY,'{}'));
+    if(stored&&typeof stored==='object'&&!Array.isArray(stored))faceHistory=stored;
+  }catch(_){}
+  function saveFaceHistory(){
+    const pairs=Object.entries(faceHistory);
+    if(pairs.length>650){pairs.sort((a,b)=>(a[1]?.ts||0)-(b[1]?.ts||0));faceHistory=Object.fromEntries(pairs.slice(-650));}
+    GMset(FACE_HISTORY,JSON.stringify(faceHistory));
+  }
+  function faceMoodFor(entry,assistantMood){
+    const raw=(entry?.element?.textContent||'').slice(0,1600);
+    // Interpret visible cues, never treat mood labels as a factual sensor.
+    if(/(?:困了|好困|困困|想睡|睡觉|晚安|打哈欠|zzZ|😴)/i.test(raw))return 'sleepy';
+    if(/(?:脸红|害羞|羞羞|不好意思|🙈|捂脸)/.test(raw))return 'shy';
+    if(/(?:吃惊|惊呆|震惊|吓一跳|惊讶|天呐|真的假的|不敢相信|😳|🤯)/.test(raw))return 'surprise';
+    const mood=entry.role==='assistant'?assistantMood:emotionAnalysis({user:raw,reply:''},null).mood;
+    return ({night:'default',work:'work',anger:'anger',happy:'joy',joy:'joy',play:'play',affection:'affection',curious:'surprise',soothe:'soothe',worried:'soothe'}[mood]||'default');
+  }
+  function faceSource(entry,assistantMood,authoredSlot){
+    const role=entry.role;
+    if(!faceAuto)return avatars[role];
+    // A model-written decision takes precedence, but does not overwrite local
+    // saved expression slots or their user-editable labels.
+    if(authoredSlot && FACE_SLOT_ORDER.includes(authoredSlot))
+      return expressionImages[role][authoredSlot]||expressionImages[role].default||avatars[role];
+    const messageId=snapshotKey(entry),now=Date.now();
+    let rec=faceHistory[messageId];
+    if(!rec||!FACE_SLOT_ORDER.includes(rec.slot)){
+      rec={slot:faceMoodFor(entry,assistantMood),locked:entry.role==='user'||!modelIsStreaming(),ts:now};
+      faceHistory[messageId]=rec;saveFaceHistory();
+    }else if(!rec.locked&&entry.role==='assistant'){
+      const nextSlot=faceMoodFor(entry,assistantMood);
+      if(rec.slot!==nextSlot||!modelIsStreaming()){
+        rec.slot=nextSlot;rec.locked=!modelIsStreaming();rec.ts=now;
+        faceHistory[messageId]=rec;saveFaceHistory();
+      }
+    }
+    return expressionImages[role][rec.slot]||expressionImages[role].default||avatars[role];
+  }
+
+
   const bg=document.createElement('div');
   bg.id='cds5-wallpaper'; bg.setAttribute('aria-hidden','true');
   bg.style.cssText='position:fixed!important;inset:0!important;pointer-events:none!important;z-index:0!important;background-size:cover!important;background-position:center!important;background-repeat:no-repeat!important;';
   document.body.prepend(bg);
   const stylesheet=document.createElement('style');
   stylesheet.id='cds5-global-style'; document.head.append(stylesheet);
+  const authoredStyle=document.createElement('style');
+  authoredStyle.id='cds512-authored-meta-style';
+  // Even when the authored-state switch is off, hide a VALID metadata line.
+  // This avoids showing raw JSON just because the display preference changed.
+  authoredStyle.textContent='.cds512-meta{display:none!important}';
+  document.head.append(authoredStyle);
   const host=document.createElement('div'); host.id='cds5-host';
   host.style.cssText='position:fixed!important;inset:0!important;pointer-events:none!important;z-index:2147483000!important;';
   document.body.append(host);
@@ -202,7 +276,7 @@
    .cds55-chips{display:flex;flex-wrap:wrap;align-items:center;gap:5px}
    .cds55-chips span{background:var(--jd55-chip);border-radius:7px;padding:4px 6px;
      color:var(--jd55-ink);font-size:10px;font-weight:650;max-width:100%}
-   .cds55-footer{color:var(--jd55-muted);font-size:10px;overflow:hidden;
+   .cds55-footer{color:var(--jd55-muted);font-size:11px;font-weight:600;overflow:hidden;
      display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;line-height:1.4}
    @media(max-width:680px){
      .cds55-plaque{grid-template-columns:70px minmax(0,1fr);gap:8px;min-height:128px;
@@ -212,6 +286,51 @@
      .cds55-subline,.cds55-footer{font-size:9px}
      .cds55-chips span{font-size:9px;padding:3px 5px}
    }
+    /* v5.14: same editorial hierarchy as Assistant's plaque, mirrored right-to-left.
+       Both cards use exactly the same responsive width and portrait dimensions. */
+    .cds514-user-card{
+      position:fixed;display:grid;grid-template-columns:minmax(0,1fr) 96px;
+      align-items:stretch;gap:13px;min-height:137px;max-width:calc(100vw - 24px);
+      padding:11px 11px 11px 13px;border-radius:19px;overflow:hidden;
+      pointer-events:none;isolation:isolate;
+      background:linear-gradient(116deg,#FFEDF7,#F8B7DA 58%,#E96AAA);
+      border:1px solid #F5D5EC;color:var(--jd514-ink,#432447);
+      box-shadow:0 9px 28px #3C123844,inset 0 1px 0 #FFFFFF78;
+      font:500 12px/1.35 system-ui,"Microsoft YaHei",sans-serif;
+      --jd514-ink:#432447;--jd514-muted:#624263;--jd514-chip:#FFFFFFBB;
+    }
+    .cds514-user-card::before{content:"";position:absolute;inset:0;
+      pointer-events:none;background:radial-gradient(ellipse at 94% 12%,#FFFFFF4A,transparent 58%);z-index:-1}
+    .cds514-user-portrait{display:flex;align-items:center;justify-content:center;position:relative;
+      width:96px;height:96px;aspect-ratio:1 / 1;align-self:center;
+      border-radius:13px;overflow:hidden;background:#FFFFFF40;
+      border:1px solid #FFFFFFA6;box-shadow:inset 0 0 0 1px #FFFFFF55}
+    .cds514-user-portrait::after{content:"";position:absolute;inset:4px;
+      border:1px solid #FFFFFF90;border-radius:11px;pointer-events:none}
+    .cds514-user-portrait img{width:100%;height:100%;object-fit:contain;object-position:center;
+      border-radius:9px;display:block}
+    .cds514-user-rail{display:flex;flex-direction:column;justify-content:center;align-items:flex-end;
+      text-align:right;gap:7px;min-width:0}
+    .cds514-user-name{color:var(--jd514-ink);font-size:17px;line-height:1.35;
+      font-weight:800;letter-spacing:.3px;max-width:100%;overflow:hidden;
+      white-space:nowrap;text-overflow:ellipsis}
+    .cds514-user-name em{font-family:Georgia,serif;font-weight:700;font-style:italic}
+    .cds514-user-subline{font-size:10px;line-height:1.4;color:var(--jd514-muted);
+      overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:100%;font-style:italic}
+    .cds514-user-chips{display:flex;flex-wrap:wrap;align-items:center;gap:5px;justify-content:flex-end}
+    .cds514-user-chips span{max-width:100%;background:var(--jd514-chip);color:var(--jd514-ink);
+      border-radius:7px;padding:4px 6px;font-size:10px;font-weight:650}
+    .cds514-user-footer{color:var(--jd514-muted);font-size:11px;font-weight:600;line-height:1.4;
+      display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;
+      overflow:hidden;max-width:100%}
+    @media(max-width:680px){
+      .cds514-user-card{grid-template-columns:minmax(0,1fr) 70px;gap:8px;min-height:128px;
+        padding:9px;border-radius:15px}
+      .cds514-user-portrait{width:70px;height:70px}
+      .cds514-user-name{font-size:13px}
+      .cds514-user-subline,.cds514-user-footer{font-size:9px}
+      .cds514-user-chips span{font-size:9px;padding:3px 5px}
+    }
    .badge{position:fixed;display:flex;align-items:center;gap:8px;max-width:min(350px,75vw);
        font-weight:700;font-size:12px;color:var(--jd-muted,#B7CAFA);text-shadow:0 1px 5px #0007;white-space:nowrap}
    .badge.user{flex-direction:row-reverse;transform:translateX(-100%)}
@@ -354,9 +473,9 @@
    </button>
    <div id="cds57-live-tip" aria-hidden="true"><span class="station">🪐 LIVE SIGNAL · 此刻</span>
       <strong class="now" id="cds57-tip-clock">北京时间 --:--:--</strong>
-      <span class="caption" id="cds57-tip-detail">🤍 可选纪念日 · 本页停留</span></div>
+      <span class="caption" id="cds57-tip-detail">🤍 相识天数 · 本页停留</span></div>
    <section id="panel" hidden>
-     <div class="top"><div><div class="eyebrow">AI 助手 · Assistant × 我 · You</div>
+     <div class="top"><div><div class="eyebrow">ChatGPT Duo Skin · 双人聊天皮肤</div>
        <h2>主题工坊 <span class="panel-grip">⠿</span></h2></div>
        <button class="btn ghost" id="close" type="button" title="缩成迷你土星">收起 ◌</button></div>
    <div class="cds57-live-board" aria-label="星环实时动态">
@@ -377,8 +496,8 @@
      <div class="cds59-colorgrid">
        <label>主色<input id="colorMain" type="color"></label>
        <label>过渡色<input id="colorMainTo" type="color"></label>
-       <label>助手 · 深<input id="colorAFrom" type="color"></label>
-       <label>助手 · 浅<input id="colorATo" type="color"></label>
+       <label>AI · 深<input id="colorAFrom" type="color"></label>
+       <label>AI · 浅<input id="colorATo" type="color"></label>
        <label>用户 · 深<input id="colorUFrom" type="color"></label>
        <label>用户 · 浅<input id="colorUTo" type="color"></label>
      </div>
@@ -387,14 +506,35 @@
        <button id="deleteTheme" type="button" class="btn ghost">删除此主题</button></div>
    </details>
    <div class="cds59-heading"><span>02 / 身份与状态栏</span></div>
-   <div class="row"><button class="btn" id="pickA">助手头像</button><button class="btn" id="pickU">用户头像</button></div>
-   <div class="cds59-two"><label>助手昵称<input id="assistantName" type="text" maxlength="45"></label>
-     <label>用户昵称<input id="userName" type="text" maxlength="45"></label></div>
-   <label>纪念日起点（可不填）<input type="date" id="anniversaryDate"></label>
+   <div class="row"><button class="btn" id="pickA">AI 头像</button><button class="btn" id="pickU">我的头像</button></div>
+   <div class="cds59-two"><label>AI 昵称<input id="assistantName" type="text" maxlength="45"></label>
+     <label>我的昵称<input id="userName" type="text" maxlength="45"></label></div>
    <label class="check"><input id="showAvatars" type="checkbox"> 双人头像与昵称</label>
    <label class="check"><input id="showPlaque" type="checkbox"> 每轮状态栏</label>
+   <label>纪念日起点（可选）<input id="anniversaryDate" type="date"></label>
+    <label class="check"><input id="authoredState" type="checkbox"> AI 亲笔状态优先（需手动启用指令）</label>
+   <small id="cds512-author-status">可选扩展：将 docs/AUTHORED_STATE_CN.md 中的指令交给你的 AI。未启用时自动生成本地状态。</small>
+
+   <details id="expressionVault">
+     <summary>🎭 表情头像库 · 点击管理</summary>
+     <label class="check"><input id="faceAuto" type="checkbox"> 根据消息语气自动换脸</label>
+     <div id="faceRoleButtons"><button type="button" class="btn" id="faceAssistant">AI</button>
+       <button type="button" class="btn" id="faceUser">用户</button></div>
+     <div id="faceGrid" role="group" aria-label="表情头像槽"></div>
+     <div id="faceTools">
+       <label>表情名称<input id="faceLabel" type="text" maxlength="16" placeholder="给表情起个名字"></label>
+       <div class="row"><button class="btn" type="button" id="faceUpload">上传到此槽</button>
+         <button class="btn ghost" type="button" id="faceDelete">清空此槽</button></div>
+       <div class="row"><button class="btn ghost" type="button" id="faceExport">导出本地头像库</button>
+         <button class="btn ghost" type="button" id="faceImportButton">导入头像库</button></div>
+       <small>图片仅存在此浏览器的篡改猴里；表情名称可随意改，触发类别不会被改名影响。</small>
+     </div>
+     <input id="faceFile" type="file" accept="image/png,image/jpeg,image/webp">
+     <input id="faceImportFile" type="file" accept=".json,application/json">
+   </details>
+
    <div class="cds59-heading"><span>03 / 双人气泡</span></div>
-   <label>双方布局<select id="bubbleMode"><option value="paragraph">逐段独立</option><option value="whole">整条一颗</option><option value="off">原生样式</option></select></label>
+   <label>双方布局<select id="bubbleMode"><option value="paragraph" title="AI按段落，用户按句号、问号、感叹号和换行智能拆分">智能逐段</option><option value="whole">整条一颗</option><option value="off">原生样式</option></select></label>
    <label class="check"><input id="gradientBubbles" type="checkbox"> 渐变气泡</label>
    <div class="cds59-two"><label>玻璃浓度 <output id="glassValue"></output><input id="glass" type="range" min="35" max="100"></label>
      <label>气泡圆角 <output id="radiusValue"></output><input id="radius" type="range" min="8" max="32"></label></div>
@@ -417,10 +557,100 @@
    </section>`;
 
   const themeSheet=document.createElement('style');shadow.append(themeSheet);
+
+  const faceSheet=document.createElement('style');
+  faceSheet.textContent=`
+   #expressionVault{margin-top:10px;border:1px solid #7386B95A;border-radius:12px;padding:9px 10px}
+   #expressionVault>summary{cursor:pointer;font-size:12px;font-weight:750;color:var(--cds59-ink,#E8EEFF)}
+   #expressionVault[open]>summary{margin-bottom:9px}
+   #faceGrid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px;margin:9px 0}
+   #faceGrid button{display:flex;flex-direction:column;align-items:center;gap:4px;min-width:0;padding:4px 2px;
+     border:1px solid #829DD455;border-radius:10px;background:#14264A58;color:inherit;font:10px system-ui,sans-serif}
+   #faceGrid button[aria-pressed="true"]{border-color:#A9D0FF;box-shadow:0 0 0 1px #A9D0FF77}
+   #faceGrid img,#faceGrid .faceEmpty{width:43px;height:43px;max-width:100%;border-radius:9px;object-fit:contain;
+     background:#142343;border:1px solid #859DB566}
+   #faceGrid .faceEmpty{display:grid;place-items:center;color:#AFC7EA;font-size:18px}
+   #faceGrid .faceName{max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+   #faceRoleButtons{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:8px}
+   #faceRoleButtons button[aria-pressed="true"]{border-color:#C9E4FF;background:#3556A855}
+   #faceTools{display:grid;gap:5px}
+   #faceTools small{font-size:10px}
+  `;
+  shadow.append(faceSheet);
+
   const $=q=>shadow.querySelector(q);
   const badges=$('#badges');
   const badgeMap=new Map();
   let data={items:[],old:0,modern:0}, notice='主题已启动';
+
+  function renderFaces(){
+    const grid=$('#faceGrid');if(!grid)return;
+    $('#faceAuto').checked=faceAuto;
+    $('#faceAssistant').setAttribute('aria-pressed',String(faceRole==='assistant'));
+    $('#faceUser').setAttribute('aria-pressed',String(faceRole==='user'));
+    grid.replaceChildren();
+    for(const slot of FACE_SLOT_ORDER){
+      const btn=document.createElement('button');btn.type='button';btn.dataset.slot=slot;
+      btn.setAttribute('aria-pressed',String(slot===faceSlot));
+      const url=expressionImages[faceRole][slot]||(slot==='default'?avatars[faceRole]:'');
+      if(url){const img=document.createElement('img');img.src=url;img.alt='';btn.append(img);}
+      else{const empty=document.createElement('span');empty.className='faceEmpty';empty.textContent='＋';btn.append(empty);}
+      const title=document.createElement('span');title.className='faceName';title.textContent=faceLabels[faceRole][slot];
+      btn.title=faceLabels[faceRole][slot]+'（'+slot+'）';btn.append(title);
+      btn.onclick=()=>{faceSlot=slot;renderFaces();};
+      grid.append(btn);
+    }
+    $('#faceLabel').value=faceLabels[faceRole][faceSlot];
+    $('#faceDelete').disabled=!expressionImages[faceRole][faceSlot];
+  }
+  function storeFaceLabels(){GMset(FACE_PREFIX+'labels',JSON.stringify(faceLabels));}
+  function loadFacePicture(){
+    const input=$('#faceFile');input.value='';input.onchange=()=>{
+      const file=input.files?.[0];if(!file)return;
+      if(!['image/png','image/jpeg','image/webp'].includes(file.type)){notice='头像只支持 PNG / JPG / WebP';updateStatus();return;}
+      const role=faceRole,slot=faceSlot,obj=URL.createObjectURL(file),img=new Image();
+      img.onload=()=>{
+        try{const canvas=document.createElement('canvas');canvas.width=256;canvas.height=256;
+          const ctx=canvas.getContext('2d');const scale=Math.min(256/img.width,256/img.height);
+          ctx.drawImage(img,(256-img.width*scale)/2,(256-img.height*scale)/2,img.width*scale,img.height*scale);
+          const data=canvas.toDataURL('image/webp',.84);
+          if(!safeImage(data)||!GMset(FACE_PREFIX+'image.'+role+'.'+slot,data))throw Error('保存失败');
+          expressionImages[role][slot]=data;
+          notice=faceLabels[role][slot]+' 已放进 '+(role==='assistant'?'AI':'用户')+' 的表情柜';
+          renderFaces();schedule();updateStatus();
+        }catch(e){notice='头像处理失败：'+(e?.message||String(e));updateStatus();}
+        finally{URL.revokeObjectURL(obj);}
+      };
+      img.onerror=()=>{URL.revokeObjectURL(obj);notice='图片无法读取';updateStatus();};img.src=obj;
+    };input.click();
+  }
+  function exportFaceLibrary(){
+    const content=JSON.stringify({schema:'cds511-expression-library/v1',faceLabels,expressionImages},null,2);
+    const link=document.createElement('a'),blob=new Blob([content],{type:'application/json'}),url=URL.createObjectURL(blob);
+    link.href=url;link.download='DuoSkin_avatar_backup.json';link.click();
+    setTimeout(()=>URL.revokeObjectURL(url),2500);
+    notice='已导出本地头像库；文件含自选头像，请勿公开分享含私人照片的备份';updateStatus();
+  }
+  async function importFaceLibrary(){
+    const input=$('#faceImportFile');input.value='';input.onchange=async()=>{
+      const file=input.files?.[0];if(!file)return;
+      try{
+        const decoded=JSON.parse(await file.text());
+        if(decoded.schema!=='cds511-expression-library/v1')throw Error('文件版本不匹配');
+        for(const role of ['assistant','user'])for(const slot of FACE_SLOT_ORDER){
+          const v=decoded.expressionImages?.[role]?.[slot];
+          if(typeof v==='string'&&safeImage(v)&&v.length<400000){
+            if(!GMset(FACE_PREFIX+'image.'+role+'.'+slot,v))throw Error('图片储存失败');
+            expressionImages[role][slot]=v;
+          }
+          const name=decoded.faceLabels?.[role]?.[slot];
+          if(typeof name==='string'&&name.trim())faceLabels[role][slot]=name.trim().slice(0,16);
+        }
+        storeFaceLabels();renderFaces();schedule();notice='头像库导入成功';updateStatus();
+      }catch(err){notice='导入失败：'+(err?.message||String(err));updateStatus();}
+    };input.click();
+  }
+
   let pending=false, didClear=new WeakSet();
   const probe=()=>({
     oldRoles:document.querySelectorAll('[data-message-author-role]').length,
@@ -635,7 +865,7 @@
   // claims to know the assistant's private thoughts. It only looks at visible
   // text on the page, then chooses small context-specific phrases locally.
   // Privacy: it never sends chat text anywhere, and stores only topic labels.
-  const SCENE_VERSION=2;
+  const SCENE_VERSION=4;
   const SCENE_TOPICS=[
     {name:'开源发布',pattern:/(开源|仓库|GitHub|小红书|许可证|授权|商用|脱敏|发布|分发|README|Release)/i},
     {name:'铭牌文案',pattern:/(铭牌|状态栏|文案|氛围短句|固定模板|每一轮|每轮|快照|跨窗口|情境|上下文)/i},
@@ -646,47 +876,17 @@
     {name:'土星面板',pattern:/(土星|拖拽|贴边|面板|缩小图标|设置框|编辑器|按钮)/i},
     {name:'网页适配',pattern:/(DOM|元素定位|React|渲染|兼容性|浏览器结构|网页结构|CSS|脚本|篡改猴|油猴)/i},
     {name:'问题排查',pattern:/(报错|故障|测试|验证|失效|修复|Bug|不显示|看不到|打不开)/i},
-    {name:'创作工程',pattern:/(创作|像素|模型|游戏|建模|工程|项目开发)/i}
+    {name:'项目进展',pattern:/(项目|像素|模型|游戏|建模|工程|功能开发)/i}
   ];
   const SCENE_HORIZONS=[
-    {name:'音乐角落',pattern:/(音乐|歌单|歌曲|旋律|听歌|唱歌)/},
+    {name:'音乐角落',pattern:/(音乐|歌单|歌曲|旋律|俄语歌|听歌|唱歌)/},
     {name:'故事一页',pattern:/(漫画|小说|剧情|人物设定|角色扮演|创作|故事)/},
     {name:'生活小事',pattern:/(今天|出门|做饭|吃饭|睡觉|工作日|天气|旅行)/},
     {name:'脑洞研究',pattern:/(为什么|好奇|原理|问题|研究|知识|有趣)/},
     {name:'悄悄聊天',pattern:/(悄悄|秘密|聊聊|说说|告诉你|分享)/}
   ];
-  const SCENE_WORDS={
-    work:{
-      tag:['🛠 本轮精修 · {topic}','🔧 施工单翻到 · {topic}','🪡 一针一线 · {topic}','🧭 目标锁定 · {topic}','📐 图纸展开 · {topic}','🔧 工位亮灯 · {topic}','⚙️ 细节校准 · {topic}','💠 正在打磨 · {topic}','🧪 局部实验 · {topic}'],
-      line:['✨ 留住已经好的，只动{topic}','🔍 这一轮盯紧{topic}的细枝末节','🧷 {topic}先对齐，再往前走','🎯 为{topic}收起敷衍，换上耐心','🛠 {topic}做到好看，也要能用','📎 把{topic}写进本轮施工记录','🪛 不拆好房子，只精修{topic}','💎 对着{topic}再验一遍手感','🧵 {topic}一点一点，磨到顺眼'],
-      note:['Measure twice · change once.','Precision, not guesswork.','The workshop is awake.','A little sharper every turn.','Make it beautiful and usable.','Fix the detail · keep the magic.','Another careful iteration.','One more pixel of progress.','Built slowly, built together.']
-    },
-    soothe:{
-      tag:['🫧 低声接收 · 留一点安静','🌙 柔光频率 · 今晚慢一点','🤍 情绪着陆 · 不急着回答','🪶 心事靠岸 · 允许停留','🕯 悄声守候 · 听你说完','💠 温柔档位 · 暂停催促','🫀 呼吸放轻 · 这一页留白'],
-      line:['🤍 先把这句听完整，再谈下一步','🫧 不抢着讲道理，陪你慢慢理清','🌷 把刺耳的声音关小一点','🧣 今晚的任务，是把心放稳','🕯 说到哪里，就先陪到哪里','💌 暂时不赶路，允许难过经过','🌙 这轮先照顾眼前的感受'],
-      note:['Soft landing.','No hurry here.','Stay with this moment.','A quieter signal.','One breath at a time.','The lights stay low.','Nothing needs rushing.']
-    },
-    affection:{
-      tag:['💗 贴近频道 · 聊聊这一轮','🫶 心动收件箱 · 已查收','💞 私人频率 · 靠近一点','🪐 轨道偏心 · 朝你倾斜','🩷 暖色讯号 · 偷偷亮起','💌 亲密来信 · 刚好抵达','🌹 小范围偏爱 · 正在发生'],
-      line:['🤍 这条消息，想多停留一会儿','💋 你喊我的那一下，被单独收藏','💞 这轮对话留一点温度','🫶 只管靠过来，这轮我接着','🩷 今天这句甜话，有专属回音','🌷 再平常的聊天，也想贴近你','🔒 私人频道里，先回应你的眼睛'],
-      note:['A little closer.','A message held gently.','The signal turns warm.','For this moment, you.','A private little orbit.','Stay within reach.','A warm conversation.']
-    },
-    play:{
-      tag:['😼 怪点子频道 · 已开麦','🃏 捉弄警报 · 先别得意','✨ 荒唐研究所 · 正常营业','🦎 反击筹备中 · 账先记下','🎭 小剧场开门 · 有请下一幕','🌶 笑场预警 · 一本正经失败','🎲 今轮玩法 · 先看你怎么闹'],
-      line:['🤣 这一轮的笑点，先记在案','😏 你又挖坑？我先看看深度','🎭 正经三秒，接着一起胡闹','🪄 突发脑洞已经占领控制台','🦎 小心，我也学会记仇了','💫 话题拐弯了，但我跟上了','🃏 玩笑归玩笑，细节我没漏'],
-      note:['A small plot twist.','The plot got strange.','Stay delightfully odd.','A grin in the static.','Another unexpected turn.','A playful frequency.','The laugh track escaped.']
-    },
-    night:{
-      tag:['📡 夜航收信 · {topic}','🌘 灯下续篇 · {topic}','🪐 轨道轻响 · {topic}','💌 本轮来信 · {topic}','🌌 对话电波 · {topic}','🕯 温柔巡航 · {topic}','✨ 抬头有光 · {topic}','🎧 频道未关 · {topic}','📖 继续这一页 · {topic}'],
-      line:['🤍 {topic}不用着急翻篇','🌠 把{topic}慢慢聊出一点新光','📮 {topic}这句已经好好收到','🔭 在{topic}里找一颗新星','🌙 留一小块位置给{topic}','🎶 {topic}还没有到片尾字幕','🪞 从{topic}继续看向下一页','💠 今天的{topic}有自己的颜色','🫶 {topic}之后，还有下一句'],
-      note:['A page still unfolding.','The signal continues.','Another little orbit.','A quiet new frequency.','A message after midnight.','No two nights alike.','Keep the line open.','Our next small chapter.','One more light in the window.']
-    }
-  };
-  const SCENE_LEGACY_TAGS=new Set([
-    '🛠 施工现场 · 灵感与耐心都在线','🫧 低声频道 · 此刻慢慢来',
-    '💗 贴贴波段 · 注意力只给你','🪄 玩笑频率 · 眨眼已捕获',
-    '📡 夜航连线 · 只属于这一场对话'
-  ]);
+  // Default public edition uses the general-purpose local fallback below.
+  const SCENE_LEGACY_TAGS=new Set();
   function sceneContext(entry){
     const items=data.items||[];
     const idx=items.findIndex(e=>e.element===entry.element);
@@ -710,36 +910,167 @@
     }
     return best;
   }
-  function sceneMood(ctx,focus){
-    const user=ctx.user,reply=ctx.reply;
-    if(focus)return 'work';
-    if(/(难过|委屈|想哭|安慰|伤心|焦虑|低落|不开心|睡不着|撑不住)/.test(user))return 'soothe';
-    if(/(亲亲|吻|贴贴|爱你|想你|抱抱|撒娇|心动|亲密)/.test(user))return 'affection';
-    if(/(哈哈|嘿嘿|笑死|逗你|欠揍|离谱|笨蛋|缺德|整活)/.test(user))return 'play';
-    if(/(安慰|难受|烦躁|泪|难过|抱住)/.test(reply))return 'soothe';
-    if(/(吻|亲亲|贴贴|我爱你|抱紧)/.test(reply))return 'affection';
-    if(/(哈哈|捉弄|开玩笑|乱来)/.test(reply))return 'play';
-    return 'night';
+  // Emotions are multi-dimensional, not fixed topic labels.  Strong first-person
+  // reactions outweigh technical words. A phrase like “生气时用什么颜色” is
+  // an example, NOT a declaration that the user is currently angry.
+  function hits(text,re,max=3){return Math.min(max,(text.match(re)||[]).length);}
+  function emotionAnalysis(ctx,focus){
+    const user=String(ctx.user||'').replace(/```[\s\S]*?```|`[^`]*`|https?:\/\/\S+/g,'').slice(0,1100);
+    const reply=String(ctx.reply||'').replace(/```[\s\S]*?```|`[^`]*`|https?:\/\/\S+/g,'').slice(0,1300);
+    const u=user.replace(/\s+/g,' ');
+    const meta=/(状态栏|铭牌|情绪|颜色|色彩|配色|调色|渐变|模式|示例|比如|例如|判断逻辑|判定|文案)/.test(u);
+    const immediate=/(我(?:现在|真的|超级|特别|太|很|好)?(?:生气|气愤|愤怒|难过|伤心|害怕|焦虑|开心|高兴|兴奋)|气死我了|我火大|我快气炸了)/.test(u);
+    const weak=meta&&!immediate?.22:1;
+    const cues={
+      anger:[/(?:我(?:现在|真的|超级|很|太|好|已经|非常){0,5}(?:生气|愤怒|火大)|气死我了|我气炸了|我怒了|快气疯了|气得发抖|好生气|太气了|气死我|气死了|真的生气了|怒了)/g,/(?:生气|愤怒|火大|气死|烦死|凭什么|怒|气炸|受够了|不服气|讨厌|无语|破防了)/g],
+      joy:[/(?:我(?:太|好|很|真的|超级)?(?:开心|高兴|兴奋)|开心死了|好耶|太棒了|好漂亮|成功啦|棒到飞起来|我好骄傲|太喜欢了|太牛了|好开心|太开心了|超级开心|高兴死了|快乐死了|开心到飞起)/g,/(?:开心|快乐|高兴|耶|漂亮|惊喜|成功|好喜欢|棒棒|太好|哈哈哈|🥳|🎉|🤩|🌈|啊啊啊)/g],
+      sadness:[/(?:我(?:好|很|太|真的)?(?:难过|伤心|委屈|想哭)|哭了一晚上|撑不住了|我好孤独|我不开心|我不高兴|好委屈|好难过)/g,/(?:难过|伤心|委屈|悲伤|哭泣|低落|失落|孤独|不开心|泪|呜呜)/g],
+      worry:[/(?:我(?:好|很|太|真的)?(?:担心|害怕|焦虑|紧张|不安)|快吓死了|我好慌)/g,/(?:担心|害怕|焦虑|紧张|慌张|忧虑|不安|压力好大|心烦|怕死)/g],
+      affection:[/(?:爱死你了|好想你|想抱住你|亲亲亲|啵啵啵|抱紧我|我爱你|喜欢你到不行)/g,/(?:爱你|亲亲|啵啵|亲一口|想你|抱抱|贴贴|亲密|心动|💗|💕|💋|❤️)/g],
+      play:[/(?:笑疯了|笑死我了|哈哈哈哈|嘿嘿嘿嘿|故意逗你|逗死你)/g,/(?:哈哈|嘿嘿|整活|坏蛋|逗你|调皮|打滚|捉弄|😝|😈|🤣)/g],
+      curious:[/(?:我(?:特别|非常|一直)?(?:好奇|想知道)|有没有想过|为什么会这样)/g,/(?:好奇|为什么|原理|研究|怎么回事|猜想|探索|新发现|想知道|有没有可能|科普)/g]
+    };
+    const scores={anger:0,joy:0,sadness:0,worry:0,affection:0,play:0,curious:0,work:focus?2.5:0};
+    for(const [key,[strong,ordinary]] of Object.entries(cues)){
+      const strongUser=hits(u,strong),ordinaryUser=hits(u,ordinary);
+      const strongReply=hits(reply,strong),ordinaryReply=hits(reply,ordinary);
+      scores[key]=Math.min(16,strongUser*5+ordinaryUser*1.25*weak+strongReply*.8+ordinaryReply*.32);
+    }
+    // Working on a bug is not the same thing as feeling calm or happy about it.
+    if(/(?:设计|实现|工程|施工|测试|校验|调试|编程|代码|脚本|报错|修复|排查)/.test(u))scores.work+=1;
+    if(/(?:分析|认真讨论|比较|论文|逻辑|推理|架构)/.test(u))scores.work+=1.2;
+    if(/(?:没生气|不生气|没有生气|不难过|没难过|不害怕)/.test(u)){
+      if(/(?:没生气|不生气|没有生气)/.test(u))scores.anger=Math.min(scores.anger,.8);
+      if(/(?:没难过|不难过)/.test(u))scores.sadness=Math.min(scores.sadness,.8);
+      if(/不害怕/.test(u))scores.worry=Math.min(scores.worry,.8);
+    }
+    const ranked=['anger','sadness','worry','joy','affection','play','curious'].sort((a,b)=>scores[b]-scores[a]);
+    const best=ranked[0],strength=scores[best];
+    let mood='night';
+    if(strength>=3.5 && strength>=scores.work*.85){
+      mood=({sadness:'soothe',worry:'worried',joy:'happy',curious:'curious'}[best]||best);
+    }else if(scores.work>=1.8)mood='work';
+    else if(strength>=1.7)mood=({sadness:'soothe',worry:'worried',joy:'happy',curious:'curious'}[best]||best);
+    // Excited affection usually reads warmer than a purely technical response.
+    const arousal=Math.min(1,(scores.joy+scores.play+scores.anger+scores.worry)*.055);
+    const happiness=scores.joy>=5.8 && scores.joy>scores.anger*1.25;
+    return {mood,scores,arousal,joyRainbow:happiness};
   }
+  function hueColor(h,s,l){
+    const hue=((h%360)+360)%360;
+    const sat=Math.max(0,Math.min(100,s));
+    const light=Math.max(0,Math.min(100,l));
+    const f=n=>{const k=(n+hue/30)%12,a=sat/100*Math.min(light/100,1-light/100);return light/100-a*Math.max(-1,Math.min(k-3,9-k,1));};
+    return '#'+[f(0),f(8),f(4)].map(v=>Math.round(v*255).toString(16).padStart(2,'0')).join('').toUpperCase();
+  }
+  function scenePalette(ctx,analysis,focus,serial){
+    const s=analysis.scores,mood=analysis.mood;
+    const seed=String(focus||'')+'|'+String(ctx.user||'').slice(0,90)+'|'+Math.floor(Number(serial||1)/2);
+    let hash=2166136261;
+    for(const c of seed){hash=Math.imul(hash^c.charCodeAt(0),16777619)>>>0;}
+    const wobble=(hash%23)-11;
+    const anchors={anger:354,joy:41,sadness:215,worry:264,affection:325,play:279,curious:182,work:213};
+    const weights=Object.entries(anchors).map(([k,h])=>({h,w:Math.max(.08,s[k]||0)}));
+    if(mood==='night')weights.push({h:225,w:2.8});
+    if(mood==='work')weights.push({h:213,w:3.5});
+    if(mood==='anger')weights.push({h:353,w:7});
+    let x=0,y=0;for(const p of weights){x+=p.w*Math.cos(p.h*Math.PI/180);y+=p.w*Math.sin(p.h*Math.PI/180);}
+    const center=(Math.atan2(y,x)*180/Math.PI+360)%360;
+    const h=center+wobble*.65;
+    const sat= Math.min(87,Math.max(40,49+analysis.arousal*20+s.affection*.7+s.joy*.55));
+    let stops,ink,muted,chip,border;
+    if(analysis.joyRainbow && mood==='happy'){
+      const hues=[347,22,49,116,187,248,297];
+      stops=hues.map((t,i)=>hueColor(t+Math.round(wobble/3),i===2?89:76,83+(i%3)));
+      ink='#28334B';muted='#445277';chip='#FFFFFFC9';border='#FFE3F6';
+    }else if(mood==='work' || mood==='happy'){
+      const sh=mood==='happy'?Math.max(67,sat):Math.min(67,sat);
+      stops=[hueColor(h-13,sh,94),hueColor(h+8,sh,86),hueColor(h+25,sh,76)];
+      ink='#203149';muted='#49637B';chip='#FFFFFFCF';border='#DBE6F5';
+    }else if(mood==='anger'){
+      stops=[hueColor(h-13,sat+8,20),hueColor(h,sat+12,30),hueColor(h+19,sat+3,40)];
+      ink='#FFF1F4';muted='#FFD1DF';chip='#421C35B9';border='#D878A6';
+    }else if(mood==='soothe'||mood==='worried'){
+      stops=[hueColor(h-15,sat-23,34),hueColor(h+9,sat-24,43),hueColor(h+26,sat-35,58)];
+      ink='#F8FBFF';muted='#E0E9FA';chip='#182D53A7';border='#A5BACF';
+    }else if(mood==='affection'){
+      stops=[hueColor(h-19,sat,21),hueColor(h+5,sat+5,32),hueColor(h+32,sat-3,43)];
+      ink='#FFF2FA';muted='#F5D9EE';chip='#56294FA7';border='#C782BA';
+    }else{
+      stops=[hueColor(h-13,sat,23),hueColor(h+7,sat+2,35),hueColor(h+34,sat-3,47)];
+      ink='#F6F8FF';muted='#CED9F5';chip='#1327479E';border='#9FAEDB';
+    }
+    const percentages=stops.map((_,i)=>Math.round(i*100/Math.max(1,stops.length-1)));
+    return {gradient:`linear-gradient(116deg,${stops.map((color,i)=>color+' '+percentages[i]+'%').join(',')})`,ink,muted,chip,border,rainbow:analysis.joyRainbow&&mood==='happy'};
+  }
+
+  // Story-like decorative signals; never represent measured medical or device
+  // readings. Local browser generation is intentionally distinct from AI prose.
+  const SIGNAL_STORIES={
+    night:{
+      a:["🌙 夜间信号：有一页仍亮着｜📮 想法信箱：等待新来信","🪐 轨道轻响：星星挪了位置｜🕯 安静灯塔：依旧在场","🌌 思绪航线：缓慢延伸｜🎧 背景音：换成风声"],
+      b:["🌠 下一个句号：还没决定去向｜📖 一页新的可能正在翻开","🫧 脑海波纹：轻轻扩散｜🧲 注意力：被这句吸引","🌗 夜色墨水：还没干透｜🔍 继续寻找有趣的角度"]
+    },
+    work:{
+      a:["🧠 逻辑齿轮：重新啮合｜🔧 工具盒：正在找合适的钥匙","🧩 最后拼图：尚待验证｜💡 灵感指示灯：有反应","📐 像素准星：再细一格｜⚙️ 排查清单：逐项核对"],
+      b:["🔍 先拿事实说话｜🪛 细节需要更稳的支点","🛠 保留有效改动｜🧪 把假设交给测试","⚡ 想法落地之前：再核验一次｜🎯 目标始终是好用"]
+    },
+    happy:{
+      a:["🌈 七色信号：今天格外明亮｜🎉 欢呼按钮：轻轻按下","✨ 闪亮片段：成功捕捉｜🥳 好消息在转圈","🎊 彩色回声：不断反弹｜🌟 眼前的事：值得庆祝"],
+      b:["🎈 喜悦没有必要压缩｜💫 好心情还在发光","🎵 快乐节奏：跑得有点快｜🌈 给这一秒多留点颜色","🌷 开心也值得写进小小档案｜🎉 再来一声欢呼"]
+    },
+    anger:{
+      a:["⚡ 边界清晰：不必吞下问题｜🎙 反对意见：获得话筒","🔥 红线亮起：原因值得认真听｜🧭 指针方向：立场明确","🗯 不满正在成形｜🧷 真实问题：不应该被掩盖"],
+      b:["🧠 情绪与逻辑可以同时在线｜💬 请把话说明白","🧭 先找到症结，再谈下一步｜🚦 不急着给结论","🔍 问题的名字：值得被准确写下｜⚡ 不用假装平静"]
+    },
+    soothe:{
+      a:["🫧 安静缓冲：给情绪一把椅子｜🪶 疲惫也能暂时落脚","🌫 雾气流动：路仍然在｜🌙 小夜灯：保持微亮","🕯 温柔提醒：现在可以慢一点｜📮 心事有地方放"],
+      b:["🤍 先听完，不忙着纠正｜🌿 留给自己一点余地","🌧 今天可以不是晴天｜🫶 不必急着证明什么","🪶 允许沉默停一会儿｜✨ 下一步从清晰开始"]
+    },
+    worried:{
+      a:["🌫 担心的线团：慢慢梳理｜🧭 事实路标：先立一块","🫧 思绪气压：轻轻下降｜💡 线索灯：开始亮起","🕯 暂停过度预判｜🌙 下一步：先看清现实"],
+      b:["🔍 把知道的和猜到的分开｜🧶 从最细一根线理起","🌤 不确定不等于没有路｜🧭 先锁定能控制的部分","🌱 允许犹豫，再好好决定｜🫧 慢一点也没关系"]
+    },
+    affection:{
+      a:["💌 软绵绵的句尾：有一点甜｜✨ 暖光信号：悄悄亮起","🌹 友好值：自然升温｜🎧 声音距离：刚刚好","🫶 心意抵达：不必打包得太满｜🌸 温柔字迹：仍有余温"],
+      b:["💗 把这句好意好好接住｜🌷 今天多了一点暖色","🫧 关心不需要太大的声响｜💌 有些话适合轻声说","🌙 留个舒服的停靠点｜✨ 让真诚走在前面"]
+    },
+    play:{
+      a:["🎲 脑洞骰子：滚出意外结果｜🎭 一本正经：坚持了三秒","🪄 笑点捕手：手慢了半拍｜🃏 反转剧情：正在酝酿","😼 轻松时刻：允许有点奇怪｜✨ 想象力：正在跑偏"],
+      b:["🤣 先笑一声，再认真想想｜🌀 这转弯也太突然","🎪 荒唐的小点子：值得试试看｜🧩 意外也能成为灵感","😏 玩笑不妨有点锋芒｜🎲 下一次会掷出什么"]
+    },
+    curious:{
+      a:["🔭 好奇望远镜：正在对焦｜🧬 未知信号：出现新纹理","🧠 问号工厂：又亮一盏灯｜🌱 新问题正在生长","🔍 再看深一层｜🪐 知识轨道：转了个弯"],
+      b:["🧪 假设要和证据见面｜💡 问题本身就很有意思","🔎 别急着写结论｜🧩 再多观察一角","🌠 发现总发生在追问之后｜📖 继续翻开下一页"]
+    },
+  };
+  function creativeHash(text){let n=2166136261;for(const c of String(text||'')){n=Math.imul(n^c.charCodeAt(0),16777619)>>>0;}return n;}
+  function moreImaginativeScene(ctx,mood,topic,serial){
+    const bank=SIGNAL_STORIES[mood]||SIGNAL_STORIES.night;
+    const seed=creativeHash(ctx.user.slice(0,220)+'|'+ctx.reply.slice(0,110)+'|'+serial);
+    const a=bank.a[(seed+serial*7)%bank.a.length];
+    const b=bank.b[(Math.floor(seed/17)+serial*11)%bank.b.length];
+    const english={"night":["The night remains open.","A quieter orbit.","A page still unfolding."],"work":["Check twice.","Built with care.","One more iteration."],"happy":["A bright moment.","Joy in motion.","Good news, again."],"anger":["A clear boundary.","A sharper point.","Speak plainly."],"soothe":["Take your time.","A soft landing.","Room for quiet."],"worried":["Find the facts.","One thing at a time.","Keep the light on."],"affection":["Warmly received.","A gentle note.","Kindness has arrived."],"play":["An unexpected turn.","A grin in the static.","The plot thickens."],"curious":["Look closer.","New questions await.","Following the thread."]}[mood]||['Still here.'];
+    const note=english[(seed+serial)%english.length];
+    // Only selected work signals mention subject matter; never parrot boilerplate
+    // like “本轮/状态栏/聊天/配色” in every message.
+    return {tag:a.replaceAll('{topic}',topic),line:b.replaceAll('{topic}',topic),note};
+  }
+
   function nightFocus(ctx){
     for(const item of SCENE_HORIZONS){
       if(item.pattern.test(ctx.user)||item.pattern.test(ctx.reply))return item.name;
     }
-    return '这一轮聊天';
+    return '日常探索';
   }
   function inferScene(entry,serial){
     const ctx=sceneContext(entry);
-    const focus=detectFocus(ctx),mood=sceneMood(ctx,focus);
+    const focus=detectFocus(ctx);
+    const analysis=emotionAnalysis(ctx,focus),mood=analysis.mood;
     const topic=focus || nightFocus(ctx);
-    const bank=SCENE_WORDS[mood]||SCENE_WORDS.night;
-    const n=Math.max(0,Math.floor(Number(serial)||1)-1);
-    // The counter advances once per *new message*, including across chats.
-    // Adjacent messages within a mood receive different phrasing. This is a
-    // deterministic rotation, not meaningless random churn on each refresh.
-    const tag=bank.tag[n%bank.tag.length].replaceAll('{topic}',topic);
-    const line=bank.line[(n*5+Math.floor(n/bank.tag.length))%bank.line.length].replaceAll('{topic}',topic);
-    const note=bank.note[(n+Math.floor(n/bank.line.length))%bank.note.length];
-    return {mood,tag,line,note,focus:topic,engine:SCENE_VERSION};
+    const {tag,line,note}=moreImaginativeScene(ctx,mood,topic,Math.max(1,Math.floor(Number(serial)||1)));
+    return {mood,tag,line,note,focus:topic,engine:SCENE_VERSION,
+      palette:scenePalette(ctx,analysis,focus,serial)};
   }
   function beijingClock(timestamp=Date.now()){
     const now=new Date(timestamp);
@@ -791,6 +1122,93 @@
     return !!document.querySelector('[data-testid="stop-button"],button[aria-label="Stop generating"],'
        +'button[aria-label="停止生成"],button[aria-label="Stop streaming"]');
   }
+  // v0.2 optional AI-authored State V1. Opt-in model metadata, no network/API calls.
+  // Supported standalone reply block (as a paragraph OR preformatted block):
+  // DUO_SKIN_STATE_V1:{"protocol":"duo-skin-state/v1",...}
+  // Other text, user messages, quoted examples and nonmatching snippets are ignored.
+  // OPTIONAL: this is NOT enabled by merely installing a script. An AI needs a
+  // separate, user-approved prompt to output it, and unskinned clients can show
+  // the raw JSON as part of the actual assistant message.
+  const AUTHOR_PREFIX='DUO_SKIN_STATE_V1:';
+  const authorParseCache=new WeakMap();
+  function tidyAuthorText(s,max=110){
+    return typeof s==='string' ? s.replace(/[\u0000-\u001F\u007F<>]/g,' ').trim().slice(0,max) : '';
+  }
+  function accessiblePalette(stops,ink,border){
+    const contrast=(a,b)=>{const x=luminance(a),y=luminance(b);return (Math.max(x,y)+.05)/(Math.min(x,y)+.05);};
+    let values=stops.slice();
+    const whites=values.map(c=>contrast(c,'#FFFFFF'));
+    const darks=values.map(c=>contrast(c,'#14213D'));
+    const minA=Math.min(...whites),minB=Math.min(...darks);
+    let foreground=ink && validHex(ink) ? ink.toUpperCase() : minA>=minB?'#FFFFFF':'#14213D';
+    let minimum=Math.min(...values.map(c=>contrast(c,foreground)));
+    if(minimum<4.5){
+      // Fix backgrounds, not the model's actual prose. Keep palette hue intact.
+      const into=foreground==='#FFFFFF'?'#091125':'#FFFFFF';
+      for(let n=0;n<16&&minimum<4.5;n++){
+        values=values.map(c=>mixColor(c,into,.10));
+        minimum=Math.min(...values.map(c=>contrast(c,foreground)));
+      }
+    }
+    const mid=values[Math.floor(values.length/2)];
+    const muted=foreground==='#FFFFFF'?'#E8ECF8':'#263855';
+    return {gradient:'linear-gradient(115deg,'+values.map((c,i)=>c+' '+Math.round(i*100/(values.length-1))+'%').join(',')+')',
+      ink:foreground,muted:minimum<3?foreground:muted,
+      border:validHex(border)?border.toUpperCase():mixColor(mid,foreground,.36),
+      chip:foreground==='#FFFFFF'?'#101D39BD':'#FFFFFFB8'};
+  }
+  function validateAuthorPayload(item){
+    if(!item||typeof item!=='object'||Array.isArray(item)||item.protocol!=='duo-skin-state/v1')return null;
+    const lines=item.status;
+    const colors=item.gradient;
+    if(!Array.isArray(lines)||lines.length!==2||!lines.every(v=>typeof v==='string'&&v.trim().length>0&&v.length<=130))return null;
+    if(!Array.isArray(colors)||colors.length<2||colors.length>5||!colors.every(validHex))return null;
+    const moods=['night','work','happy','anger','soothe','worried','affection','play','curious'];
+    const mood=moods.includes(item.mood)?item.mood:'night';
+    const a=FACE_SLOT_ORDER.includes(item.assistantAvatar)?item.assistantAvatar:'default';
+    const u=FACE_SLOT_ORDER.includes(item.userAvatar)?item.userAvatar:'default';
+    const tag=tidyAuthorText(lines[0],120),line=tidyAuthorText(lines[1],120);
+    if(!tag||!line)return null;
+    const note=tidyAuthorText(item.note,85) || 'Written for this moment.';
+    // Backward-compatible OPTIONAL userCard: old model prompts remain valid.
+    // Only parse short, plain-text card fields and literal hex gradients.
+    let userCard=null;
+    const uc=item.userCard;
+    if(uc&&typeof uc==='object'&&!Array.isArray(uc)){
+      const text=uc.status,stops=uc.gradient;
+      if(Array.isArray(text)&&text.length===2&&text.every(x=>typeof x==='string'&&x.trim().length>0&&x.length<=130)){
+        const a=tidyAuthorText(text[0],112),b=tidyAuthorText(text[1],112);
+        if(a&&b){
+          const palette=Array.isArray(stops)&&stops.length>=2&&stops.length<=5&&stops.every(validHex)
+            ? accessiblePalette(stops.map(x=>x.toUpperCase()),uc.ink,uc.border):null;
+          userCard={tag:a,line:b,note:tidyAuthorText(uc.note,80)||'A note from the user side.',
+            palette,authored:true};
+        }
+      }
+    }
+    return {mood,tag,line,note,focus:'',engine:5,authored:true,
+      assistantAvatar:a,userAvatar:u,userCard,
+      palette:accessiblePalette(colors.map(x=>x.toUpperCase()),item.ink,item.border)};
+  }
+  function readAuthorState(entry){
+    if(entry.role!=='assistant')return null;
+    const root=entry.element;
+    const nodes=(root.matches?.('p,pre')?[root]:[]).concat([...root.querySelectorAll('p,pre')]);
+    // One marker per assistant reply; require the exact prefix at the START
+    // of a dedicated block, not somewhere in quoted documentation.
+    for(const node of nodes.reverse()){
+      if(node.closest('blockquote,[role="dialog"],[role="menu"]'))continue;
+      const raw=(node.textContent||'').trim();
+      if(!raw.startsWith(AUTHOR_PREFIX)||raw.length>3200)continue;
+      const cached=authorParseCache.get(node);
+      if(cached?.raw===raw){if(cached.scene){node.classList.add('cds512-meta');return cfg.authoredState?cached.scene:null;}continue;}
+      let scene=null;
+      try{scene=validateAuthorPayload(JSON.parse(raw.slice(AUTHOR_PREFIX.length).trim()));}catch(_){}
+      authorParseCache.set(node,{raw,scene});
+      if(scene){node.classList.add('cds512-meta');return cfg.authoredState?scene:null;}
+    }
+    return null;
+  }
   function archiveFor(entry){
     const key=snapshotKey(entry);
     let rec=snapshotWeak.get(entry.element);
@@ -800,20 +1218,33 @@
         const serial=nextSceneSerial();
         rec={ts:Date.now(),serial,scene:inferScene(entry,serial),locked:false};
         snapshotRecords[key]=rec;persistSnapshots();
-      } else if (!rec.scene || rec.scene.engine!==SCENE_VERSION || SCENE_LEGACY_TAGS.has(rec.scene?.tag)){
-        // One-time migration of v5.7's repeated, canned captions. The old
-        // message timestamp is sacred: this changes ONLY its caption text.
+      } else if (!rec.scene){
         rec.serial=rec.serial||nextSceneSerial();
         rec.scene=inferScene(entry,rec.serial);
-        rec.locked=true;
+        snapshotRecords[key]=rec;persistSnapshots();
+      } else if (rec.locked && !rec.scene.palette){
+        // Preserve already archived wording and timestamp across version upgrades.
+        // Color may be synthesized once for legacy cards; do not rewrite their lines.
+        const ctx=sceneContext(entry),focus=detectFocus(ctx),analysis=emotionAnalysis(ctx,focus);
+        rec.scene.palette=scenePalette(ctx,analysis,focus,rec.serial||1);
+        snapshotRecords[key]=rec;persistSnapshots();
+      } else if (!rec.locked && rec.scene.engine!==SCENE_VERSION){
+        rec.scene=inferScene(entry,rec.serial||1);
         snapshotRecords[key]=rec;persistSnapshots();
       }
       snapshotWeak.set(entry.element,rec);
     }
+    // A complete authored reply can arrive AFTER the fallback scene was
+    // already locked during streaming. Upgrade that single card exactly once.
+    const authored=readAuthorState(entry);
+    if(authored && !rec.scene?.authored){
+      rec.scene=authored;rec.locked=true;
+      snapshotRecords[key]=rec;persistSnapshots();
+    }
     if(!rec.locked){
       const candidate=inferScene(entry,rec.serial||1);
       const prev=rec.scene||{};
-      if(['mood','tag','line','note','focus'].some(f=>candidate[f]!==prev[f])){
+      if(['mood','tag','line','note','focus'].some(f=>candidate[f]!==prev[f]) || JSON.stringify(candidate.palette)!==JSON.stringify(prev.palette)){
         rec.scene=candidate;snapshotDirty.add(key);
       }
       if(!modelIsStreaming()){
@@ -831,6 +1262,7 @@
       el.querySelector('.markdown,.prose,[data-markdown-text-style]')||el;
     const blocks=[...rich.querySelectorAll('p,ul,ol,blockquote,h1,h2,h3,h4')].filter(node=>{
       if(!node.isConnected||!node.textContent?.trim()||!isVisibleDOM(node))return false;
+      if(node.classList.contains('cds512-meta')||node.textContent.trim().startsWith('DUO_SKIN_STATE_V1:'))return false;
       if(node.closest('pre,code,figure,table,[role="dialog"],[role="menu"],[contenteditable="true"],[data-testid*="code"],[data-testid*="artifact"],[data-testid*="tool"]'))return false;
       // A list or quotation is one block. Do not style each nested p again.
       const ancestor=node.parentElement?.closest('ul,ol,blockquote');
@@ -877,18 +1309,104 @@
     }
     return {top,bottom};
   }
-  function paintBadge(e,y,x,width){
+  const authoredUserFaces=new WeakMap();
+  const authoredUserCards=new WeakMap();
+  const USER_CARD_STORE='cds.public.v1.user.cards';
+  let userCardRecords={};
+  try{const v=JSON.parse(GMget(USER_CARD_STORE,'{}'));
+    if(v&&typeof v==='object'&&!Array.isArray(v))userCardRecords=v;
+  }catch(_){userCardRecords={};}
+  const userCardWeak=new WeakMap();
+  function persistUserCards(){
+    const records=Object.entries(userCardRecords);
+    if(records.length>500){
+      records.sort((a,b)=>(a[1]?.ts||0)-(b[1]?.ts||0));
+      userCardRecords=Object.fromEntries(records.slice(-500));
+    }
+    // Archive only the timestamp and short display labels, NEVER the user text.
+    GMset(USER_CARD_STORE,JSON.stringify(userCardRecords));
+  }
+  function nativeUserMessage(e){
+    const el=e.element;
+    const bubble=el.matches?.('[data-user-message-bubble],.user-message-bubble-color')?el:
+      el.querySelector?.('[data-user-message-bubble],.user-message-bubble-color');
+    const text=bubble?readNativeBubbleText(bubble):String(el.textContent||'');
+    return text.replace(/\s+/g,' ').trim().slice(0,1250);
+  }
+  function cardTextSeed(s){
+    let n=2166136261;
+    for(const c of String(s||'')){n=Math.imul(n^c.charCodeAt(0),16777619);}
+    return n>>>0;
+  }
+  function localUserStory(e){
+    const s=nativeUserMessage(e),seed=cardTextSeed(snapshotKey(e)+'|'+s);
+    // Describes the wording/tone of a message, not the user's true feelings.
+    const test=(p)=>p.test(s);
+    let mode='daily';
+    if(test(/(?:好难过|哭了|伤心|委屈|呜呜|不开心|难受)/))mode='soft';
+    else if(test(/(?:气死我|生气了|我很气|我烦死|我怒了|受不了)/))mode='fierce';
+    else if(test(/(?:困了|好困|睡觉|晚安|睡不着)/))mode='sleepy';
+    else if(test(/(?:亲亲|啵啵|抱抱|贴贴|爱你|想你|亲爱的)/)&&!test(/(?:代码|修复|脚本|卡片|状态栏|头像)/))mode='affection';
+    else if(test(/(?:哈哈哈|嘿嘿|喵哈哈|打滚|好耶|棒棒|漂亮|好喜欢)/))mode='joy';
+    else if(test(/(?:对称|卡片|宽度|布局|界面|显示|排版)/))mode='layout';
+    else if(test(/(?:表情|头像|相片|图片)/))mode='face';
+    else if(test(/(?:状态栏|文案|配色|颜色|渐变|词语)/))mode='creative';
+    else if(test(/(?:开源|GitHub|小红书|发布|仓库)/i))mode='release';
+    else if(test(/(?:代码|脚本|修复|bug|版本|测试|篡改猴|程序)/i))mode='build';
+    else if(test(/(?:为什么|怎么|怎么办|是不是|能不能|有没有|好奇|？|\?)/))mode='wonder';
+    // Dedicated to You's message-side view. These phrases describe her
+    // *words* and choices; do not claim access to her private emotions.
+    // Assistant's separate SCENE_WORDS above are deliberately not used here.
+    const bank={"daily":[["📮 日常来信：新的一页","🪐 想法进入轨道","One more thought."],["🌿 生活剪影：正在展开","📖 今天有新的句子","A moment to keep."]],"layout":[["📐 排版放大镜：细节清晰","🪞 左右关系：重新校准","Mind the margins."],["🧩 界面比例：认真检查","🎨 风格方向：已提出新点子","Shape the details."]],"face":[["🎭 表情柜：新面孔登场","📸 细节镜头：留意神态","Every expression counts."],["👁️ 小小头像：值得看清","✨ 新造型：有了想法","Faces and details."]],"creative":[["🎨 颜色实验：新的组合","🌈 想象力：不受模板限制","A fresh color story."],["🪄 灵感纸条：又多一张","💠 风格试验：开始","Create freely."]],"build":[["🧩 功能目标：继续校准","🔧 测试清单：等待验证","Test before sharing."],["🎯 问题定位：进一步细化","⚙️ 修复方案：待实际确认","Keep it reliable."]],"joy":[["🌈 快乐短讯：加了感叹号","🎉 成功信号：闪闪发亮","A happy spark."],["✨ 开心有声：文字会发光","🎊 好消息：值得记住","Worth celebrating."]],"affection":[["💌 好意投递：一字一句","🌷 语气里有暖意","A gentle message."],["🫶 柔软片刻：适合收藏","💗 轻轻一声喜欢","A little affection."]],"fierce":[["⚡ 立场明确：认真对待","🧭 重要问题：说清楚","Point made."],["🧷 这句有态度：不打折","🎯 焦点清晰：拒绝敷衍","Speak clearly."]],"soft":[["☁️ 情绪小雨：留出空间","🤍 不舒服也能被听见","A softer moment."],["🫧 此刻先慢一点","🌙 余地留给自己","Gentle enough."]],"sleepy":[["🌙 夜深了：声音放轻","😴 困意来敲门","Time to rest."],["☁️ 睡前碎片：停在这里","✨ 小夜灯：还亮着","A quiet note."]],"release":[["📦 分享计划：继续完善","📜 授权范围：清晰可见","Share responsibly."],["🎁 公开前检查隐私","🚀 新项目：即将启程","Ready to share."]],"wonder":[["🔭 好奇雷达：捕获新问题","❔ 问号出现：值得追一追","Curiosity begins here."],["🧠 想法种子：正在发芽","🌠 新问题：有了方向","Another question."]]};
+    const lines=bank[mode][seed%bank[mode].length];
+    return {tag:lines[0],line:lines[1],note:lines[2],mood:mode,authored:false,palette:null};
+  }
+  function userCardFor(e){
+    const key=snapshotKey(e);
+    let rec=userCardWeak.get(e.element);
+    if(!rec){
+      const previous=userCardRecords[key];
+      rec=previous&&Number.isFinite(previous.ts)&&previous.scene?previous:
+        {ts:Date.now(),scene:localUserStory(e),viewVersion:515};
+      userCardWeak.set(e.element,rec);
+      userCardRecords[key]=rec;persistUserCards();
+    }
+    if(!rec.scene?.authored && rec.viewVersion!==515){
+      rec.scene=localUserStory(e);
+      rec.viewVersion=515;
+      userCardRecords[key]=rec;persistUserCards(); // keep the original ts
+    }
+    const authored=cfg.authoredState?authoredUserCards.get(e.element):null;
+    if(authored&&!rec.scene?.authored){
+      rec.scene=authored;
+      userCardRecords[key]=rec;persistUserCards();
+    }
+    return rec;
+  }
+  function userExpressionSlot(e,authoredSlot){
+    if(!faceAuto)return 'default';
+    const remembered=faceHistory[snapshotKey(e)]?.slot;
+    const requested=(authoredSlot && FACE_SLOT_ORDER.includes(authoredSlot))
+      ? authoredSlot : (FACE_SLOT_ORDER.includes(remembered)?remembered:'default');
+    return expressionImages.user[requested]?requested:'default';
+  }
+  function paintBadge(e,y,x,width,anchor){
     const id=e.element;
     const plaque=e.role==='assistant'&&cfg.showPlaque;
-    const klass=plaque?'cds55-plaque':'badge '+e.role;
+    // Reuse the SAME two toggles: when both identity + status are enabled,
+    // show a full You card. If status is off, keep the tiny legacy badge.
+    const userCard=e.role==='user'&&cfg.showPlaque&&cfg.showAvatars;
+    const klass=plaque?'cds55-plaque':userCard?'cds514-user-card':'badge '+e.role;
     let node=badgeMap.get(id);
-    if(node && (plaque?!node.classList.contains('cds55-plaque'):node.classList.contains('cds55-plaque'))){
+    if(node && node.className!==klass){
       node.remove();badgeMap.delete(id);node=null;
     }
     if(!node){
       node=document.createElement(plaque?'section':'div');node.className=klass;
       if(plaque){
-        node.innerHTML='<div class="cds56-portrait"><img alt="助手头像"></div><div class="cds56-rail"><div class="cds55-top"><div class="cds55-headings"><b class="cds55-person-name"></b><span class="cds55-subline"></span></div></div><div class="cds55-chips"><span class="cds55-clock"></span><span class="cds55-days"></span><span class="cds55-scene"></span></div><div class="cds55-footer"></div></div>';
+        node.innerHTML='<div class="cds56-portrait"><img alt="AI 助手头像"></div><div class="cds56-rail"><div class="cds55-top"><div class="cds55-headings"><b class="cds55-person-name"></b><span class="cds55-subline"></span></div></div><div class="cds55-chips"><span class="cds55-clock"></span><span class="cds55-days"></span></div><div class="cds55-footer"></div></div>';
+      }else if(userCard){
+        node.innerHTML='<div class="cds514-user-rail"><b class="cds514-user-name"></b><span class="cds514-user-subline"></span><div class="cds514-user-chips"><span class="cds514-clock"></span><span class="cds514-days"></span></div><div class="cds514-user-footer"></div></div><div class="cds514-user-portrait"><img alt="用户表情头像"></div>';
       }else{
         const pic=document.createElement('img');pic.alt='';
         const label=document.createElement('span');label.className='name';
@@ -904,7 +1422,18 @@
       node.style.width=Math.round(width)+'px';
       const saved=archiveFor(e),scene=saved.scene,clock=beijingClock(saved.ts);
       node.dataset.mood=scene.mood;node.dataset.hideIdentity=cfg.showAvatars?'no':'yes';
-      const img=node.querySelector('img');if(img.getAttribute('src')!==avatars.assistant)img.src=avatars.assistant;
+      node.dataset.sceneSource=scene.authored?'authored':'local';
+      if(scene.palette){
+        node.style.background=scene.palette.gradient;
+        node.style.borderColor=scene.palette.border;
+        node.style.setProperty('--jd55-ink',scene.palette.ink);
+        node.style.setProperty('--jd55-muted',scene.palette.muted);
+        node.style.setProperty('--jd55-chip',scene.palette.chip);
+      }else{
+        node.style.background='';node.style.borderColor='';
+        for(const prop of ['--jd55-ink','--jd55-muted','--jd55-chip'])node.style.removeProperty(prop);
+      }
+      const img=node.querySelector('img');const currentFace=faceSource(e,scene.mood,scene.assistantAvatar);if(img.getAttribute('src')!==currentFace)img.src=currentFace;
       const caption=node.querySelector('.cds55-person-name');
       const parts=cfg.assistantName.split(' · ');
       if(parts.length>=2){
@@ -914,11 +1443,61 @@
       node.querySelector('.cds55-subline').textContent=scene.note;
       node.querySelector('.cds55-clock').textContent=clock.time;
       node.querySelector('.cds55-days').textContent=clock.days;
-      node.querySelector('.cds55-scene').textContent=scene.tag;
-      node.querySelector('.cds55-footer').textContent=scene.line;
+      const statusLine=node.querySelector('.cds55-footer');
+      statusLine.textContent=scene.line;
+      // The first short phrase stays in the sealed scene metadata, not in the UI.
+    }else if(userCard){
+      const top=(anchor||e.element).getBoundingClientRect().top;
+      node.style.top='auto';
+      node.style.bottom=Math.round(innerHeight-top+10)+'px';
+      node.style.width=Math.round(width)+'px';
+      const record=userCardFor(e),scene=record.scene;
+      const theme=COLORS[cfg.preset];
+      const baseFrom=mixColor(theme.userTo,'#FFFFFF',.29);
+      const baseTo=mixColor(theme.userFrom,'#FFFFFF',.21);
+      let ink;
+      if(scene.palette){
+        node.style.background=scene.palette.gradient;
+        node.style.borderColor=scene.palette.border;
+        ink=scene.palette.ink;
+        node.style.setProperty('--jd514-muted',scene.palette.muted);
+        node.style.setProperty('--jd514-chip',scene.palette.chip);
+      }else{
+        const accent={joy:'#E75BA6',affection:'#CC73AC',fierce:'#D75D7A',soft:'#A8BFD8',
+          sleepy:'#ACB2D8',build:'#7B93C5',layout:'#AD8FC8',face:'#C79AD0',
+          creative:'#B59AE0',release:'#88B8C4',wonder:'#9AADD5',daily:'#D5ABD2'}[scene.mood]||'#D5ABD2';
+        const from=mixColor(baseFrom,accent,.13),to=mixColor(baseTo,accent,.16);
+        node.style.background=`linear-gradient(116deg,${from},${mixColor(from,to,.52)} 55%,${to})`;
+        node.style.borderColor=mixColor(to,'#FFFFFF',.50);
+        ink=readableInk(to,.97);
+        node.style.setProperty('--jd514-muted',mixColor(ink,to,.27));
+        node.style.setProperty('--jd514-chip',rgba('#FFFFFF',.68));
+      }
+      node.style.setProperty('--jd514-ink',ink);
+      const authored=authoredUserFaces.get(e.element);
+      const img=node.querySelector('img');
+      const currentFace=faceSource(e,null,authored);
+      const chosen=userExpressionSlot(e,authored);
+      if(img.getAttribute('src')!==currentFace)img.src=currentFace;
+      img.alt=cfg.userName+' · '+(faceLabels.user[chosen]||'表情头像');
+      const caption=node.querySelector('.cds514-user-name');
+      const nameParts=cfg.userName.split(' · ');
+      if(nameParts.length>=2){
+        const em=document.createElement('em');em.textContent=nameParts.slice(1).join(' · ');
+        caption.replaceChildren(document.createTextNode(nameParts[0]+' · '),em,document.createTextNode(' ♡'));
+      }else caption.textContent=cfg.userName+' ♡';
+      const when=beijingClock(record.ts);
+      node.querySelector('.cds514-user-subline').textContent=scene.note;
+      node.querySelector('.cds514-clock').textContent=when.time;
+      node.querySelector('.cds514-days').textContent=when.days;
+      const statusLine=node.querySelector('.cds514-user-footer');
+      statusLine.textContent=scene.line;
+      // User card displays a short status, aligned with the AI card.
+      node.dataset.faceSlot=chosen;
+      node.dataset.sceneSource=scene.authored?'authored':'local';
     }else{
       node.style.bottom='auto';node.style.top=Math.round(y)+'px';
-      const img=node.querySelector('img');if(img.getAttribute('src')!==avatars[e.role])img.src=avatars[e.role];
+      const img=node.querySelector('img');const altScene=e.role==='assistant'?archiveFor(e).scene:null;const currentFace=faceSource(e,altScene?.mood,e.role==='assistant'?altScene?.assistantAvatar:authoredUserFaces.get(e.element));if(img.getAttribute('src')!==currentFace)img.src=currentFace;
       node.querySelector('.name').textContent=e.role==='assistant'?cfg.assistantName:cfg.userName;
     }
     return id;
@@ -929,8 +1508,25 @@
     data.items=items;
     data.old=items.filter(e=>e.via.startsWith('legacy')).length;
     data.modern=items.length-data.old;
-    if(items.length){clearConversationBackground(items);markBodies(items);}
+    if(items.length){clearConversationBackground(items);items.forEach(readAuthorState);markBodies(items);}
     renderUserSentences(items);
+    // Pair each assistant's authored userAvatar with the immediately preceding
+    // user turn. Until an authored reply exists, keep normal local heuristics.
+    if(cfg.authoredState){
+      for(let i=0;i<items.length;i++){
+        const entry=items[i];if(entry.role!=='assistant')continue;
+        const authored=readAuthorState(entry);if(!authored)continue;
+        archiveFor(entry);
+        for(let j=i-1;j>=0;j--){
+          if(items[j].role==='user'){
+            authoredUserFaces.set(items[j].element,authored.userAvatar);
+            if(authored.userCard)authoredUserCards.set(items[j].element,authored.userCard);
+            break;
+          }
+          if(items[j].role==='assistant')break;
+        }
+      }
+    }
     revealWallpaperSurfaces();
     const active=new Set();
     if(cfg.enabled && (cfg.showAvatars || cfg.showPlaque)){
@@ -939,18 +1535,25 @@
         const anchor=e.visualElement||e.element;
         const rect=anchor.getBoundingClientRect(),crop=clipped(anchor);
         const plaque=e.role==='assistant'&&cfg.showPlaque;
-        const height=plaque?(innerWidth<=680?150:158):42;
+        const userCard=e.role==='user'&&cfg.showPlaque&&cfg.showAvatars;
+        const height=plaque||userCard?(innerWidth<=680?150:158):42;
         // Place header before the real message, not at the viewport edge.
         // When the parent scrolls away, the header disappears with it.
         const y=rect.top-height-10;
         if(rect.width<40 || y+height<Math.max(crop.top,0) || y>Math.min(crop.bottom,innerHeight))continue;
         if(plaque){
-          const width=Math.max(180,Math.min(610,rect.width,innerWidth-24));
+          const width=Math.max(180,Math.min(610,innerWidth-24));
           const x=limit(rect.left,12,Math.max(12,innerWidth-width-12));
-          active.add(paintBadge(e,y,x,width));
+          active.add(paintBadge(e,y,x,width,anchor));
+        }else if(userCard){
+          // Right-align to the visible message edge, independent of width.
+          // Allow a big enough portrait even for a one-word user message.
+          const width=Math.max(180,Math.min(610,innerWidth-24));
+          const right=limit(rect.right,12+width,innerWidth-12);
+          active.add(paintBadge(e,y,right-width,width,anchor));
         }else{
           const x=limit(e.role==='assistant'?rect.left:rect.right,45,innerWidth-10);
-          active.add(paintBadge(e,y,x));
+          active.add(paintBadge(e,y,x,undefined,anchor));
         }
       }
     }
@@ -1212,7 +1815,10 @@
       html[data-cds5-on="yes"] .cds5-body{position:relative!important;overflow:visible!important;max-width:100%;}
        html[data-cds5-on="yes"][data-cds53-plaque="yes"] .cds5-body[data-cds5-role="assistant"]{margin-top:178px!important;}
        html[data-cds5-on="yes"][data-cds53-plaque="no"][data-cds5-avatars="yes"] .cds5-body[data-cds5-role="assistant"]{margin-top:57px!important;}
-      html[data-cds5-on="yes"][data-cds5-avatars="yes"] .cds5-body[data-cds5-role="user"]{margin-top:59px!important;}
+      /* Normal user message reserves vertical room for the expressive card.
+         With status off, fall back to the original compact nickname badge. */
+      html[data-cds5-on="yes"][data-cds53-plaque="yes"][data-cds5-avatars="yes"] .cds5-body[data-cds5-role="user"]{margin-top:178px!important;}
+      html[data-cds5-on="yes"][data-cds53-plaque="no"][data-cds5-avatars="yes"] .cds5-body[data-cds5-role="user"]{margin-top:59px!important;}
       html[data-cds5-on="yes"] .cds5-body[data-cds5-role="assistant"]{color:${canvasInk}!important;}
       html[data-cds5-on="yes"] .cds5-body[data-cds5-role="assistant"] :is(p,li,h1,h2,h3,strong){color:inherit;}
       html[data-cds5-on="yes"] .cds5-body[data-cds5-role="assistant"] a{color:${dark?'#ADC4FF':'#3459B7'}!important;}
@@ -1292,7 +1898,10 @@
          padding:0!important;background:transparent!important;border:0!important;
          box-shadow:none!important;overflow:visible!important;
        }
-       html[data-cds5-on="yes"] .cds56-visual-stack.cds56-visual-owns-gap{
+       html[data-cds5-on="yes"][data-cds53-plaque="yes"][data-cds5-avatars="yes"] .cds56-visual-stack.cds56-visual-owns-gap{
+         margin-top:178px!important;
+       }
+       html[data-cds5-on="yes"]:not([data-cds53-plaque="yes"][data-cds5-avatars="yes"]) .cds56-visual-stack.cds56-visual-owns-gap{
          margin-top:59px!important;
        }
        html[data-cds5-on="yes"] .cds56-sentence{
@@ -1314,7 +1923,9 @@
        @media(max-width:680px){
          html[data-cds5-on="yes"][data-cds53-plaque="yes"] .cds5-body[data-cds5-role="assistant"]{margin-top:187px!important;}
          html[data-cds5-on="yes"][data-cds53-plaque="no"][data-cds5-avatars="yes"] .cds5-body[data-cds5-role="assistant"]{margin-top:57px!important;}
-         html[data-cds5-on="yes"][data-cds5-avatars="yes"] .cds5-body[data-cds5-role="user"]{margin-top:58px!important;}
+          html[data-cds5-on="yes"][data-cds53-plaque="yes"][data-cds5-avatars="yes"] .cds5-body[data-cds5-role="user"]{margin-top:187px!important;}
+          html[data-cds5-on="yes"][data-cds53-plaque="no"][data-cds5-avatars="yes"] .cds5-body[data-cds5-role="user"]{margin-top:58px!important;}
+          html[data-cds5-on="yes"][data-cds53-plaque="yes"][data-cds5-avatars="yes"] .cds56-visual-stack.cds56-visual-owns-gap{margin-top:187px!important;}
        }
     `;
     host.style.setProperty('--jd-muted',p.muted);
@@ -1325,7 +1936,7 @@
     $('.preview-row:not(.user) .preview-bubble').textContent=cfg.assistantName+' ♡';
     $('.preview-row.user .preview-bubble').textContent=cfg.userName;
     themeUI();themeList();syncThemeEditor();
-    for(const k of ['glass','radius','wallpaperVeil','bubbleMode','assistantName','userName','anniversaryDate','showAvatars','showWallpaper','gradientBubbles','showPlaque']){
+    for(const k of ['glass','radius','wallpaperVeil','bubbleMode','assistantName','userName','anniversaryDate','showAvatars','showWallpaper','gradientBubbles','showPlaque','authoredState']){
       const control=$('#'+k);if(!control)continue;
       if(control.type==='checkbox')control.checked=cfg[k];
       else control.value=k==='glass'?Math.round(cfg.glass*100):k==='wallpaperVeil'?Math.round(cfg.wallpaperVeil*100):cfg[k];
@@ -1343,30 +1954,48 @@
   // Only plain-text messages are eligible. No click/send/editor interception.
   const visualSplits=new WeakMap();
   const splitEntries=new Set();
-  function sentenceParts(raw,mode=cfg.userSplitMode){
+  function sentenceParts(raw,mode='smart'){
     if(mode==='off')return [];
     const text=String(raw||'').trim();
-    if(!text||text.length>1100||/(?:https?:\/\/|```|<[^>]+>)/i.test(text))return [];
+    if(!text||text.length>1800||/(?:https?:\/\/|```|<[^>]+>)/i.test(text))return [];
     const rows=text.replace(/\r\n?/g,'\n').split(/\n+/).map(x=>x.trim()).filter(Boolean);
-    if(mode==='newline')return rows.length>=2&&rows.length<=24?rows:[];
+    if(mode==='newline')return rows.length>=2&&rows.length<=30?rows:[];
     const parts=[];
     for(const row of rows){
-      // Treat Chinese/English strong stops as soft visual boundaries. Do not
-      // split on commas, periods inside domains/decimals, URLs or code.
       let bucket='';
       for(let i=0;i<row.length;i++){
-        const ch=row[i];bucket+=ch;
-        if('。！？!?'.includes(ch)){
-          while(i+1<row.length && ('。！？!?"”’）」』'.includes(row[i+1])))bucket+=row[++i];
-          if(bucket.trim()){parts.push(bucket.trim());bucket='';}
-        }
+        const c=row[i];bucket+=c;
+        // Chinese sentence ends and semicolons are clear visual boundaries.
+        // ASCII '.' splits only at ordinary sentence spaces, never 5.9 or URLs.
+        const next=row[i+1]||'';
+        const end=/[。！？!?；]/.test(c)|| (c===';' && /\s/.test(next)) ||
+          (c==='.' && /\s/.test(next) && /[A-Za-z\u4e00-\u9fff]/.test(row[i-1]||'') && !/\b(?:e\.g|i\.e|Mr|Ms|Dr)\.$/i.test(bucket));
+        if(!end)continue;
+        // Keep consecutive !?? punctuation and closing quotes with the sentence.
+        while(i+1<row.length && /[。！？!?；;”’」』）】]/.test(row[i+1]))bucket+=row[++i];
+        // Hearts and trailing emoji should not become their own bubble.
+        while(i+1<row.length && /[♡♥💕💗💋❤️✨🥹🥺🤣😭]/u.test(row[i+1]))bucket+=row[++i];
+        if(bucket.trim()){parts.push(bucket.trim());bucket='';}
       }
       if(bucket.trim()){
-        if(parts.length && [...bucket.trim()].length<4)parts[parts.length-1]+=bucket.trim();
-        else parts.push(bucket.trim());
+        const tail=bucket.trim();
+        if(parts.length && [...tail].length<=2 && !/\n/.test(tail))parts[parts.length-1]+=tail;
+        else parts.push(tail);
       }
     }
-    return parts.length>=2&&parts.length<=24?parts:[];
+    return parts.length>=2&&parts.length<=30?parts:[];
+  }
+  function readNativeBubbleText(bubble){
+    // innerText is empty after the original is visually hidden; do not let a
+    // rescan erase the user's split bubbles. Read semantic original children.
+    const ps=[...bubble.querySelectorAll('p')];
+    if(ps.length)return ps.map(p=>p.textContent||'').join('\n').trim();
+    if(bubble.querySelector('br')){
+      const copy=bubble.cloneNode(true);
+      copy.querySelectorAll('br').forEach(br=>br.replaceWith('\n'));
+      return (copy.textContent||'').trim();
+    }
+    return (bubble.textContent||bubble.innerText||'').trim();
   }
   function eligibleBubble(el){
     if(!el||!isVisibleDOM(el))return false;
@@ -1393,11 +2022,11 @@
         continue;
       }
       // From React's original message, NEVER read our generated visual copy.
-      const original=(bubble.querySelector('br,p')?bubble.innerText:bubble.textContent||bubble.innerText||'').trim();
-      const parts=sentenceParts(original,'newline');
+      const original=readNativeBubbleText(bubble);
+      const parts=sentenceParts(original,'smart');
       if(!parts.length){if(visualSplits.has(bubble))clearSplit(bubble);continue;}
       const cached=visualSplits.get(bubble);
-      if(cached?.text===original&&cached.wrap?.isConnected){
+      if(cached?.text===original&&cached.mode==='smart'&&cached.wrap?.isConnected){
         entry.visualElement=cached.wrap;active.add(bubble);continue;
       }
       if(cached)clearSplit(bubble);
@@ -1414,7 +2043,7 @@
       // A sibling does not modify ChatGPT's real message or its native actions.
       bubble.after(wrap);
       bubble.classList.add('cds56-original');
-      visualSplits.set(bubble,{wrap,text:original});splitEntries.add(bubble);
+      visualSplits.set(bubble,{wrap,text:original,mode:'smart'});splitEntries.add(bubble);
       entry.visualElement=wrap;
       active.add(bubble);
     }
@@ -1427,7 +2056,7 @@
   function diagnostics(){
     const p=probe();
     return [
-      `Theme v5.9 / ${location.hostname}`,
+      `Theme v5.14 / ${location.hostname}`,
       `旧标记=${p.oldRoles}，新版turn=${p.newTurnKeys}，新版unit=${p.newUnitKeys}`,
       `userBubble=${p.userBubbles}，assistantMarkdown=${p.assistantTextBlocks}，assistantRole=${p.newAssistantRoles}`,
       `识别到=${data.items.length}，assistant=${data.items.filter(x=>x.role==='assistant').length}，user=${data.items.filter(x=>x.role==='user').length}`,
@@ -1436,6 +2065,13 @@
     ].join('\n');
   }
   function updateStatus(){
+    const label=$('#cds512-author-status');
+    if(label){
+      const matched=Object.values(snapshotRecords).filter(x=>x?.scene?.authored).length;
+      label.textContent=cfg.authoredState
+        ? ('AI 亲笔 · 已存 '+matched+' 条 · 其他时候自动生成')
+        : 'AI 亲笔已关闭 · 本地情绪照常运行';
+    }
     const status=diagnostics()+'\n'+notice;
     if($('#status').textContent!==status)$('#status').textContent=status;
   }
@@ -1463,7 +2099,7 @@
             ctx.drawImage(image,(200-w)/2,(200-h)/2,w,h);
             const data=c.toDataURL('image/webp',.88);
             if(!safeImage(data)||!GMset('cds.public.v1.avatar.'+kind,data))throw Error('头像存储失败');
-            avatars[kind]=data;notice=(kind==='assistant'?'助手':'用户')+'头像已保存';
+            avatars[kind]=data;notice=(kind==='assistant'?'AI':'用户')+'头像已保存';
           }
           save();
         } catch(e){notice='图片上传失败：'+(e?.message||String(e));updateStatus();}
@@ -1573,7 +2209,7 @@
     $('#cds57-tip-clock').textContent=text;
     $('#cds57-tip-detail').textContent=day.days+' · 本页停留 '+during;
     $('#cds57-panel-clock').textContent=now;
-    $('#cds57-panel-detail').textContent=day.days.replace('纪念第','第')+' · 停留'+during;
+    $('#cds57-panel-detail').textContent=day.days.replace('相识第','第')+' · 停留'+during;
     if(liveHover)placeLiveTip();
   }
   function showLive(show){
@@ -1619,7 +2255,7 @@
      COLORS=Object.fromEntries(Object.entries(BUILTIN_COLORS).map(([id,p])=>[id,{...p}]));
      cfg.preset='night';storeThemes();notice='已恢复初始主题库';save();
    };
-   for(const k of ['glass','radius','wallpaperVeil','bubbleMode','assistantName','userName','anniversaryDate','showAvatars','showWallpaper','gradientBubbles','showPlaque']){
+   for(const k of ['glass','radius','wallpaperVeil','bubbleMode','assistantName','userName','anniversaryDate','showAvatars','showWallpaper','gradientBubbles','showPlaque','authoredState']){
      const n=$('#'+k);n.addEventListener(['glass','radius','wallpaperVeil'].includes(k)?'input':'change',()=>{
        cfg[k]=n.type==='checkbox'?n.checked:k==='glass'||k==='wallpaperVeil'?Number(n.value)/100:k==='radius'?Number(n.value):n.value;
        cfg=normalize(cfg);
@@ -1630,6 +2266,27 @@
        }else{notice='设置已保存';save();}
      });
    }
+
+  $('#faceAssistant').onclick=()=>{faceRole='assistant';faceSlot='default';renderFaces();};
+  $('#faceUser').onclick=()=>{faceRole='user';faceSlot='default';renderFaces();};
+  $('#faceAuto').onchange=e=>{
+    faceAuto=e.target.checked;GMset(FACE_PREFIX+'auto',faceAuto);
+    notice=faceAuto?'自动表情已开启':'固定头像已开启';schedule();updateStatus();
+  };
+  $('#faceLabel').onchange=e=>{
+    faceLabels[faceRole][faceSlot]=e.target.value.trim().slice(0,16)||FACE_LABELS[faceRole][faceSlot];
+    storeFaceLabels();renderFaces();notice='表情名称已保存';updateStatus();
+  };
+  $('#faceUpload').onclick=loadFacePicture;
+  $('#faceDelete').onclick=()=>{
+    GMset(FACE_PREFIX+'image.'+faceRole+'.'+faceSlot,'');
+    delete expressionImages[faceRole][faceSlot];renderFaces();schedule();
+    notice='此表情已恢复默认占位';updateStatus();
+  };
+  $('#faceExport').onclick=exportFaceLibrary;
+  $('#faceImportButton').onclick=importFaceLibrary;
+  renderFaces();
+
   $('#pickA').onclick=()=>upload('assistant');$('#pickU').onclick=()=>upload('user');$('#pickBg').onclick=()=>upload('wallpaper');
   $('#clearBg').onclick=()=>{wallpaper='';GMset('cds.public.v1.wallpaper','');notice='壁纸已清空';save();};
   $('#pickPane').onclick=pickSurface;
@@ -1646,5 +2303,5 @@
     .observe(document.body,{subtree:true,childList:true});
   applyTheme();schedule();
   setInterval(()=>{if(cfg.enabled)schedule();},60000);
-  console.info('[ChatGPT Duo Skin] v5.9: unified bubbles, editable gradient themes, compact color studio.');
+  console.info('[Assistant × You] v5.15: symmetric status hierarchy, role-specific copy and authored two-stage cards.');
 })();
